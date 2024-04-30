@@ -29,12 +29,12 @@ const Products: FC = () => {
                                   stock,
                                   brand,
                                   category,
-                                  thumbnail,
+
                                   images
                               }: IProductProps) => (
                     <Product key={id} id={id} title={title} description={description} price={price}
                              discountPercentage={discountPercentage}
-                             rating={rating} stock={stock} brand={brand} category={category} thumbnail={thumbnail}
+                             rating={rating} stock={stock} brand={brand} category={category}
                              images={images}/>
                 ))
 
