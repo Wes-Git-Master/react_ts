@@ -4,7 +4,7 @@ import { SinglePost } from "./SinglePost";
 
 import type { Post } from "../../types";
 
-export const PostList = () => {
+export  const PostList = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
