@@ -2,7 +2,7 @@
 .bodyProducts{
     display: flex;
     justify-content: center;
-    background-color: #adadda;
+    background-color: rgb(166, 166, 222);
 
 }
     /*************************   content   *************************/
@@ -14,7 +14,7 @@
     height: 1000px;
     width: 96vw;
     margin: 24px 0 0 0;
-    background-color: rgba(220, 220, 220, 0.49);
+    background-color: rgba(225, 225, 225, 0.45);
     border: 1px rgba(0, 0, 0, 0.33) solid;
     border-radius: 12px;
 }
