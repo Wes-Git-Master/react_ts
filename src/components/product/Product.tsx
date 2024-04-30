@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-import './product.css';
+import styles from './product.module.css';
 
 export interface IProductProps {
     id: number,
@@ -25,23 +25,22 @@ const Product: FC<IProductTypeProps> = ({
                                             brand, category, images
                                         }) => {
     return (
-        <div className={'content'}>
+        <div className={styles.content}>
 
-            <h1 className={'titles'}>{title}</h1>
-            <h3 className={'descriptions'}>{description}</h3>
-            <ul className={'productUl'}>
-                <li className={'productLi'}>price: {price}</li>
-                <li className={'productLi'}>discountPercentage: {discountPercentage}</li>
-                <li className={'productLi'}>rating: {rating}</li>
-                <li className={'productLi'}>stock: {stock}</li>
-                <li className={'productLi'}>brand: {brand}</li>
-                <li className={'productLi'}>category: {category}</li>
-
+            <h1 className={styles.titles}>{title}</h1>
+            <h3 className={styles.descriptions}>{description}</h3>
+            <ul className={styles.productUl}>
+                <li className={styles.productLi}>price: {price}</li>
+                <li className={styles.productLi}>discountPercentage: {discountPercentage}</li>
+                <li className={styles.productLi}>rating: {rating}</li>
+                <li className={styles.productLi}>stock: {stock}</li>
+                <li className={styles.productLi}>brand: {brand}</li>
+                <li className={styles.productLi}>category: {category}</li>
             </ul>
 
             <div>
                 {
-                    images?.map((image, index) => <div key={index} className={'productImageBox'}><img className={'productImage'}  src={image} alt={title}/></div>)
+                    images?.map((image, index) => <div key={index} className={styles.productImageBox}><img className={styles.productImage}  src={image} alt={title}/></div>)
                 }
             </div>
 
