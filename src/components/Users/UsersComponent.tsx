@@ -13,7 +13,7 @@ const UsersComponent = () => {
 
     return (
         <div>
-            {users.map(value => (<UserComponent key={value.id} user={value} />))}
+            {users.map(value => (<UserComponent key={value.id} user={value}/>))}
         </div>
     );
 };

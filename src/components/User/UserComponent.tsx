@@ -2,6 +2,8 @@ import React, {FC} from 'react';
 
 import {IUserProps} from "../../models/IUserModel";
 
+import style from "."
+
 interface IProps {
     user: IUserProps
 }
@@ -10,7 +12,7 @@ type IPropsType = IProps & { children?: React.ReactNode }
 
 const UserComponent: FC<IPropsType> = ({user}) => {
     return (
-        <div>
+        <div className={s}>
             <hr/>
             <p>user - {user.id}</p>
             <ul>
@@ -67,6 +69,7 @@ const UserComponent: FC<IPropsType> = ({user}) => {
                 <li>title - {user.company.title}</li>
             </ul>
             <img src={user.image} alt="#"/>
+            <button>posts</button>
         </div>
     );
 };
