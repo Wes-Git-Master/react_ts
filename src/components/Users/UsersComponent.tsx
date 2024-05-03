@@ -8,12 +8,12 @@ const UsersComponent = () => {
     const [users,setUsers]= useState<IUserProps[]>([])
 
     useEffect(() => {
-        requests.users.getAllUsers().then(({data}) => setUsers(data))
+        requests.users.getAllUsers().then(({data:{users}}) => setUsers(users))
     },[])
 
     return (
         <div>
-            {users.map((user) => (<UserComponent user={user}/>))}
+            {users.map(value => (<UserComponent key={value.id} user={value} />))}
         </div>
     );
 };

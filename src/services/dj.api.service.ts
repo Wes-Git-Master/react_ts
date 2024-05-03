@@ -1,5 +1,6 @@
 import axios, {AxiosResponse} from "axios";
-import {IUserProps} from "../models/IUserModel";
+
+import {IUsersResponseModel} from "../models/ResponseModel/IUsersResponseModel";
 
 let axiosInstance = axios.create({
     baseURL: 'https://dummyjson.com',
@@ -8,7 +9,7 @@ let axiosInstance = axios.create({
 
 let requests = {
     users: {
-        getAllUsers : ():Promise<AxiosResponse<IUserProps[]>> => {
+        getAllUsers : ():Promise<AxiosResponse<IUsersResponseModel>> => {
             return axiosInstance.get('/users')}
     },
     posts: {

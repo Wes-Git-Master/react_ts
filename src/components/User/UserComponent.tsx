@@ -12,7 +12,7 @@ const UserComponent:FC<IPropsType> = ({user}) => {
     return (
         <div>
             {user.id} {user.age} {user.firstName}
-            {user.image}
+            <img src={user.image} alt="#"/>
 
         </div>
     );
