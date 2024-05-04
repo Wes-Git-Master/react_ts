@@ -1,0 +1,51 @@
+
+.userBody {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(222, 222, 222, 0.36);
+
+}
+
+.userInfo {
+    margin: 0 0 0 25px;
+}
+
+.userAddress {
+    margin: 0 40px 0 0;
+}
+
+.userCompany {
+    margin: 0 0 0 135px;
+}
+
+.image {
+    height: 277px;
+    width: 277px;
+    position: relative;
+    right: 410px;
+    top: 465px;
+}
+
+
+.button {
+    height: 24px;
+    width: 500px;
+    position: relative;
+    right: 150px;
+    top: 22px;
+    border: black 2px solid;
+    border-radius: 8px;
+    background-color: rgba(100, 100, 100, 0.16);
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 255, 0.44);
+}
+
+.divHr {
+    background-color: rgba(112, 112, 112, 0.75);
+    height: 1px;
+    margin-left: 8px;
+
+}
+
