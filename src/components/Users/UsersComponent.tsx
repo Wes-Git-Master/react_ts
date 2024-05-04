@@ -6,11 +6,10 @@ import {requests} from "../../services/dj.api.service";
 const UsersComponent = () => {
 
     const [users,setUsers]= useState<IUserProps[]>([])
-
+    // console.log(users)
     useEffect(() => {
         requests.users.getAllUsers().then(({data:{users}}) => setUsers(users))
     },[])
-
     return (
         <div>
             {users.map(value => (<UserComponent key={value.id} user={value}/>))}
