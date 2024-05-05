@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {IPostProps} from "../../models/IPostModel";
 
-const Posts = () => {
+interface IProps {
+    posts: IPostProps[]
+}
+const PostsComponent:FC<IProps> = ({posts}) => {
     return (
         <div>
-            Posts
+            {posts.map((posts) => (<div> {posts.body}</div>))}
             
         </div>
     );
 };
 
-export {Posts};
+export {PostsComponent};

@@ -8,9 +8,16 @@ interface IProps {
     user: IUserProps
 }
 
-type IPropsType = IProps & { children?: React.ReactNode }
+type IPropsType = IProps & { children?: React.ReactNode } & { lift?:(userId:number) => void }
 
-const UserComponent: FC<IPropsType> = ({user}) => {
+const UserComponent: FC<IPropsType> = ({user,lift}) => {
+
+    const onClickHandler = () => {
+        if (lift) {
+            lift(user.id)
+        }
+    }
+
     return (
 
         <div>
@@ -79,7 +86,7 @@ const UserComponent: FC<IPropsType> = ({user}) => {
                     </ul>
                 </div>
                 <img src={user.image} alt="#" className={styles.image}/>
-                <button className={styles.button}>posts</button>
+                <button className={styles.button} onClick={onClickHandler}>posts</button>
             </div>
         </div>
     );
