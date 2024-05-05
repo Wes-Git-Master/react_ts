@@ -2,6 +2,7 @@ import axios, {AxiosResponse} from "axios";
 
 import {IUsersResponseModel} from "../models/ResponseModel/IUsersResponseModel";
 import {IPostProps} from "../models/IPostModel";
+import {IPostsResponseModel} from "../models/ResponseModel/IPostsResponseModel";
 
 let axiosInstance = axios.create({
     baseURL: 'https://dummyjson.com',
@@ -14,7 +15,7 @@ let requests = {
             return axiosInstance.get('/users')}
     },
     posts: {
-        getAllPostsOfSingleUser : (id:number):Promise<AxiosResponse<IPostProps[]>> => {
+        getAllPostsOfSingleUser : (id:number):Promise<AxiosResponse<IPostsResponseModel>> => {
            return  axiosInstance.get('/posts/user/' + id)
         }
 

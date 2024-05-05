@@ -14,8 +14,8 @@ const App: FC = () => {
 
     const lift = (userId: number) => {
         requests.posts.getAllPostsOfSingleUser(userId).then(({data}) => {
-            // console.log(data)
-            setPosts(data)
+            // console.log(data.posts)
+            setPosts(data.posts)
         })
     }
 
