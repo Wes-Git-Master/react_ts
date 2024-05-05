@@ -7,7 +7,7 @@ interface IProps {
 const PostsComponent:FC<IProps> = ({posts}) => {
     return (
         <div>
-            {posts.map((posts) => (<div> {posts.body}</div>))}
+            {posts.map((posts) => (<div key={posts.id}> {posts.body}</div>))}
             
         </div>
     );
