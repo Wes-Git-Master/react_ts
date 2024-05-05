@@ -1,10 +1,10 @@
 .userBox{
-    width: 70vw;
+    width: 1100px;
 }
 
 .userBody {
     display: flex;
-    justify-content: center;
+   /*justify-content: center;*/
     background-color: rgba(222, 222, 222, 0.36);
 
 }
@@ -24,25 +24,32 @@
 .image {
     height: 277px;
     width: 277px;
-    position: relative;
-    right: 410px;
-    top: 465px;
+    margin: 45px 40px 0 40px;
+
 }
 
 
 .button {
-    height: 24px;
-    width: 500px;
-    position: relative;
-    right: 150px;
-    top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 29px;
+    width: 220px;
+    margin: 8px 0 0 81px;
+    font-size: 18px;
     border: black 2px solid;
     border-radius: 8px;
     background-color: rgba(100, 100, 100, 0.16);
+    transition: background-color 0.1s ease-in;
 }
 
 .button:hover {
     background-color: rgba(0, 0, 255, 0.44);
+
+}
+.button:active {
+    background-color: rgba(232, 41, 41, 0.72);
+    transition: color 10s;
 }
 
 .divHr {

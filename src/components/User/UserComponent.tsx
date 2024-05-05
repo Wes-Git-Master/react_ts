@@ -84,8 +84,11 @@ const UserComponent: FC<IPropsType> = ({user, lift}) => {
                         <li>title - {user.company.title}</li>
                     </ul>
                 </div>
-                <img src={user.image} alt="#" className={styles.image}/>
-                <button className={styles.button} onClick={onClickHandler}>posts</button>
+                <div>
+                    <img src={user.image} alt="#" className={styles.image}/>
+                    <button className={styles.button} onClick={onClickHandler}>posts</button>
+                </div>
+
             </div>
         </div>
     );
