@@ -17,10 +17,9 @@ const UserComponent: FC<IPropsType> = ({user, lift}) => {
             lift(user.id)
         }
     }
-
     return (
 
-        <div>
+        <div className={styles.userBox}>
             <div className={styles.divHr}></div>
             <div className={styles.userBody}>
                 <div className={styles.userInfo}>

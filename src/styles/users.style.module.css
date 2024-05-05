@@ -1,3 +1,6 @@
+.userBox{
+    width: 70vw;
+}
 
 .userBody {
     display: flex;
@@ -7,15 +10,15 @@
 }
 
 .userInfo {
-    margin: 0 0 0 25px;
+    margin: 0 0 0 22px;
 }
 
 .userAddress {
-    margin: 0 40px 0 0;
+    margin: 0 0 0 0;
 }
 
 .userCompany {
-    margin: 0 0 0 135px;
+    margin: 0 0 0 125px;
 }
 
 .image {

@@ -6,6 +6,8 @@ import {UsersComponent} from "./components/Users/UsersComponent";
 import {requests} from "./services/dj.api.service";
 import {IPostProps} from "./models/IPostModel";
 import {PostsComponent} from "./components/Posts/PostsComponent";
+import style from "../src/styles/style.module.css"
+
 
 
 const App: FC = () => {
@@ -20,10 +22,10 @@ const App: FC = () => {
     }
 
     return (
-        <>
+        <div className={style.box}>
             <UsersComponent lift={lift}/>
             <PostsComponent posts={posts}/>
-        </>
+        </div>
     );
 }
 
