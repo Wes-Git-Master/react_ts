@@ -3,15 +3,15 @@ import {IUserProps} from "../../models/IUserModel";
 import {UserComponent} from "../User/UserComponent";
 import {requests} from "../../services/dj.api.service";
 
-type IPropsType = {lift?:(userId:number)=> void}
+type IPropsType = { lift?: (userId: number) => void }
 
-const UsersComponent:FC<IPropsType> = ({lift}) => {
+const UsersComponent: FC<IPropsType> = ({lift}) => {
 
-    const [users,setUsers]= useState<IUserProps[]>([])
+    const [users, setUsers] = useState<IUserProps[]>([])
     // console.log(users)
     useEffect(() => {
-        requests.users.getAllUsers().then(({data:{users}}) => setUsers(users))
-    },[])
+        requests.users.getAllUsers().then(({data: {users}}) => setUsers(users))
+    }, [])
     return (
         <div>
             {users.map(value => (<UserComponent key={value.id} user={value} lift={lift}/>))}

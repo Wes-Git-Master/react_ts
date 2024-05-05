@@ -8,9 +8,9 @@ interface IProps {
     user: IUserProps
 }
 
-type IPropsType = IProps & { children?: React.ReactNode } & { lift?:(userId:number) => void }
+type IPropsType = IProps & { children?: React.ReactNode } & { lift?: (userId: number) => void }
 
-const UserComponent: FC<IPropsType> = ({user,lift}) => {
+const UserComponent: FC<IPropsType> = ({user, lift}) => {
 
     const onClickHandler = () => {
         if (lift) {

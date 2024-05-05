@@ -10,20 +10,21 @@ import {PostsComponent} from "./components/Posts/PostsComponent";
 
 const App: FC = () => {
 
-    const [posts,setPosts] = useState<IPostProps[]>([])
+    const [posts, setPosts] = useState<IPostProps[]>([])
 
-    const lift = (userId:number) => {
+    const lift = (userId: number) => {
         requests.posts.getAllPostsOfSingleUser(userId).then(({data}) => {
+            // console.log(data)
             setPosts(data)
         })
     }
 
-  return (
-    <>
-        <UsersComponent lift={lift}/>
-        <PostsComponent posts={posts}/>
-    </>
-  );
+    return (
+        <>
+            <UsersComponent lift={lift}/>
+            <PostsComponent posts={posts}/>
+        </>
+    );
 }
 
 export default App;
