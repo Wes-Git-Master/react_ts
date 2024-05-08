@@ -7,7 +7,7 @@ let axiosInstance = axios.create({
     headers: {"Content-Type": "application/json"}
 });
 
-let reqest = {
+let requests = {
      users: {
          getAllUsers: ():Promise<AxiosResponse<IUserResponseModel>> => {
                     return axiosInstance.get('/users')
@@ -20,6 +20,6 @@ let reqest = {
      }
 }
 
-export default reqest
+export default requests
 
 
