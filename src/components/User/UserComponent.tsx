@@ -6,7 +6,7 @@ const UserComponent = () => {
     return (
         <div>
 
-            {}
+
             
         </div>
     );
