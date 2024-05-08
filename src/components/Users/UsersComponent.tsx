@@ -10,7 +10,7 @@ import {IUserPropsModel} from "../../models/IUserModel";
 
 const UsersComponent:FC<IUserPropsModel> = () => {
 
-    const [users,setUsers] = useState([]);
+    const [users,setUsers] = useState<IUserPropsModel[]>([]);
 
     useEffect(() => {
         requests.users.getAllUsers().then(value => console.log(value.data))
