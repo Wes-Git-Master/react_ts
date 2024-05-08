@@ -1,5 +1,5 @@
-import {ICartModel} from "../ICartModel";
+import {ICartPropsModel} from "../CartModel/ICartModel";
 
 export interface ICartResponseModel {
-    carts: ICartModel[]
+    carts: ICartPropsModel[]
 }

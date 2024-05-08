@@ -1,6 +1,6 @@
 import {IProductModel} from "./IProductModel";
 
-export interface ICartModel {
+export interface ICartPropsModel {
     id: number,
     products: IProductModel[],
     total: number,

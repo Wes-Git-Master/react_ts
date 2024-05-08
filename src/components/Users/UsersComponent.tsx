@@ -3,7 +3,8 @@ import React, {FC, useEffect, useState} from 'react';
 import {requests} from "../../services/dj.api.service";
 
 import {UserComponent} from "../User/UserComponent";
-import {IUserPropsModel} from "../../models/IUserModel";
+
+import {IUserPropsModel} from "../../models/UserModel/IUserModel";
 
 
 const UsersComponent: FC = () => {
