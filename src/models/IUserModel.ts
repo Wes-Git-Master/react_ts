@@ -1,4 +1,4 @@
-export interface IPropsUserModel {
+export interface IUserPropsModel {
     id: number,
     firstName: string,
     lastName: string,
