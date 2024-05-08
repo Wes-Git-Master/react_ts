@@ -4,19 +4,12 @@ import './App.css';
 
 import {UsersComponent} from "./components/Users/UsersComponent";
 
-
-
-
 const App: FC = () => {
-  return (
+    return (
         <>
-
-        <UsersComponent/>
-
-
-
+            <UsersComponent/>
         </>
-  );
+    );
 }
 
 export default App;

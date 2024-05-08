@@ -6,21 +6,19 @@ import {UserComponent} from "../User/UserComponent";
 import {IUserPropsModel} from "../../models/IUserModel";
 
 
+const UsersComponent: FC = () => {
 
-
-const UsersComponent:FC<IUserPropsModel> = () => {
-
-    const [users,setUsers] = useState<IUserPropsModel[]>([]);
+    const [users, setUsers] = useState<IUserPropsModel[]>([]);
 
     useEffect(() => {
-        requests.users.getAllUsers().then(value => console.log(value.data))
+        requests.users.getAllUsers().then(({data:{users}}) => setUsers(users))
 
-    },[])
+    }, [])
 
     return (
         <div>
             {
-                users.map(users=> <UserComponent/>)
+                users.map(users => <UserComponent/>)
             }
 
         </div>
