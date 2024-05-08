@@ -20,6 +20,6 @@ let requests = {
      }
 }
 
-export default requests
+export {requests}
 
 

@@ -1,4 +1,4 @@
-import {ICartModel} from "../CartModel/ICartModel";
+import {ICartModel} from "../ICartModel";
 
 export interface ICartResponseModel {
     carts: ICartModel[]

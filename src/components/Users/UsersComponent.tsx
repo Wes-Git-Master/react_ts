@@ -1,14 +1,19 @@
 import React, {FC, useEffect, useState} from 'react';
-import {IUserPropsModel} from "../../models/UserModel/IUserModel";
-import requests from "../../services/dj.api.service";
-import {UserComponent} from "../User/UserComponent";
 
-const UsersComponent:FC<IUserPropsModel[]> = () => {
+import {requests} from "../../services/dj.api.service";
+
+import {UserComponent} from "../User/UserComponent";
+import {IUserPropsModel} from "../../models/IUserModel";
+
+
+
+
+const UsersComponent:FC<IUserPropsModel> = () => {
 
     const [users,setUsers] = useState([]);
 
     useEffect(() => {
-        requests.users.getAllUsers().then(value => setUsers(users))
+        requests.users.getAllUsers().then(value => console.log(value.data))
 
     },[])
 
@@ -17,7 +22,7 @@ const UsersComponent:FC<IUserPropsModel[]> = () => {
             {
                 users.map(users=> <UserComponent/>)
             }
-            
+
         </div>
     );
 };
