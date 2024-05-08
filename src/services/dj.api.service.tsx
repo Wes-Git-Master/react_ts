@@ -1,4 +1,6 @@
-import axios from "axios";
+import axios, {AxiosResponse} from "axios";
+import {IUserResponseModel} from "../models/ResponseModels/IUserResponseModel";
+import {ICartResponseModel} from "../models/ResponseModels/ICartResponseModel";
 
 let axiosInstance = axios.create({
     baseURL: 'https://dummyjson.com/',
@@ -7,12 +9,17 @@ let axiosInstance = axios.create({
 
 let reqest = {
      users: {
-         getAllUsers = () => {
-
+         getAllUsers: ():Promise<AxiosResponse<IUserResponseModel>> => {
+                    return axiosInstance.get('/users')
+         }
+     },
+     carts: {
+         getAllCarts: ():Promise<AxiosResponse<ICartResponseModel>> => {
+             return axiosInstance.get('/carts')
          }
      }
 }
 
-
+export default reqest
 
 
