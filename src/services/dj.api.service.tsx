@@ -6,7 +6,11 @@ let axiosInstance = axios.create({
 });
 
 let reqest = {
-     users:
+     users: {
+         getAllUsers = () => {
+
+         }
+     }
 }
 
 
