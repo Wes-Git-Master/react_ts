@@ -6,8 +6,11 @@ import {UserComponent} from "../User/UserComponent";
 
 import {IUserPropsModel} from "../../models/UserModel/IUserModel";
 
+type IPropsType = {lift?: (userId:number) => void}
+const UsersComponent: FC<IPropsType> = ({lift}) => {
 
-const UsersComponent: FC = () => {
+
+
 
     const [users, setUsers] = useState<IUserPropsModel[]>([]);
 
@@ -19,7 +22,7 @@ const UsersComponent: FC = () => {
     return (
         <div>
             {
-                users.map(user => (<UserComponent key={user.id} user={user} />))
+                users.map(user => (<UserComponent key={user.id} user={user} lift={lift}/>))
             }
 
         </div>

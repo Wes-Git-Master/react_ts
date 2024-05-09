@@ -5,19 +5,26 @@ interface IProps {
     user: IUserPropsModel
 }
 
-const UserComponent: FC<IProps> = ({user}) => {
+type IPropsType = IProps & {children?:React.ReactNode} & {lift?: (userId:number) => void}
 
+const UserComponent: FC<IPropsType> = ({user,lift}) => {
+
+    const onClickHandler = () => {
+        if (lift){
+            lift(user.id)
+        }
+
+    }
 
     return (
         <div>
             <hr/>
-            <p>{user.id}</p>
-            <hr/>
-            <p>{user.age}</p>
-            <hr/>
-            <p>{user.firstName}</p>
-
-
+            <h1>{user.firstName} {user.lastName}</h1>
+            <ul>
+                <li><h3>userId - {user.id}</h3></li>
+            </ul>
+            <img src={user.image} alt=""/>
+            <button onClick={onClickHandler}>cart</button>
         </div>
     );
 };

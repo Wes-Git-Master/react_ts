@@ -14,8 +14,8 @@ let requests = {
          }
      },
      carts: {
-         getAllCarts: ():Promise<AxiosResponse<ICartResponseModel>> => {
-             return axiosInstance.get('/carts')
+         getCartOfSingleUser: (id:number):Promise<AxiosResponse<ICartResponseModel>> => {
+             return axiosInstance.get('/carts/user/' + id)
          }
      }
 }

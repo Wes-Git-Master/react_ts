@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {ICartPropsModel} from "../../models/CartModel/ICartModel";
 
-const CartComponent = () => {
+interface IProps{
+    cart: ICartPropsModel
+}
+
+type IPropsType = IProps & {children?:React.ReactNode}
+const CartComponent:FC<IPropsType> = ({cart}) => {
     return (
         <div>
-            CartComponent
+            {cart.userId}
             
         </div>
     );
