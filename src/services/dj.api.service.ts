@@ -1,5 +1,7 @@
 import axios, {AxiosResponse} from "axios";
-import {IPostModel} from "../models/IPostModel";
+
+import {IPostsResponseModel} from "../models/ResponseModel/IPostsResponseModel";
+
 
 const axiosInstance = axios.create({
     baseURL: 'https://dummyjson.com',
@@ -8,7 +10,7 @@ const axiosInstance = axios.create({
 
 let requests = {
     posts: {
-        getAllPosts : ():Promise<AxiosResponse<IPostModel[]>> => {
+        getAllPosts : ():Promise<AxiosResponse<IPostsResponseModel>> => {
             return axiosInstance.get('/posts');
         }
     },

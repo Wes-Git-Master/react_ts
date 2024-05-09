@@ -9,12 +9,13 @@ type IPropsType = IProps & { children?:React.ReactNode }
 const PostComponent:FC<IPropsType> = ({post}) => {
     return (
         <div>
+            <hr/>
             <p>postId - {post.id}</p>
-            <p>body - {post.title}</p>
-            <p>{post.body}</p>
-            <p>{post.userId}</p>
-            <p>{post.tags}</p>
-            <p>{post.reactions}</p>
+            <p>tittle - {post.title}</p>
+            {/*<p>body - {post.body}</p>*/}
+            <p>userId - {post.userId}</p>
+            <p>tags - {post.tags}</p>
+            <p>reactions - {post.reactions}</p>
 
         </div>
     );
