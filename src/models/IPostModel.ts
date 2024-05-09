@@ -3,6 +3,6 @@ export interface IPostModel {
     title: string,
     body: string,
     userId: number,
-    tags: [string],
+    tags: string[],
     reactions: number
 }
