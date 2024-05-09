@@ -12,7 +12,6 @@ const PostComponent:FC<IPropsType> = ({post}) => {
             <hr/>
             <p>postId - {post.id}</p>
             <p>tittle - {post.title}</p>
-            {/*<p>body - {post.body}</p>*/}
             <p>userId - {post.userId}</p>
             <p>tags - {post.tags}</p>
             <p>reactions - {post.reactions}</p>

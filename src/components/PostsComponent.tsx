@@ -9,7 +9,7 @@ const PostsComponent = () => {
 
     useEffect(() => {
         requests.posts.getAllPosts().then(({data}) => setPosts(data.posts))
-    }, [])
+    }, []);
     return (
         <div>
             {
