@@ -1,12 +1,14 @@
-import React, {FC} from 'react';
+import React from "react";
+import "./App.css";
+import { Counter, PostList, UserList } from "./components";
 
-import './App.css';
-
-const App: FC = () => {
+function App() {
   return (
-    <>
-
-    </>
+    <div className="App">
+      <Counter />
+      {/* <PostList /> */}
+      <UserList />
+    </div>
   );
 }
 
