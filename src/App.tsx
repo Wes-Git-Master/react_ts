@@ -18,8 +18,8 @@ const App = () => {
 
     return (
         <div className='App'>
-            <div className={'posts'}><PostsComponent lift={lift}/></div>
-            <div className={'comments'}><CommentsComponent comments={comments}/></div>
+            <div><PostsComponent lift={lift}/></div>
+            <div><CommentsComponent comments={comments}/></div>
 
         </div>
     );
