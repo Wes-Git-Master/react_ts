@@ -1,9 +1,17 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-const CommentsComponent = () => {
+import {CommentComponent} from "./CommentComponent";
+import {ICommentModel} from "../models/ICommentModel";
+
+interface IProps {
+    comments: ICommentModel[]
+}
+const CommentsComponent:FC<IProps> = ({comments}) => {
     return (
         <div>
-            CommentsComponent
+            {
+                comments.map(comments => (<CommentComponent key={comments.id} comment={comments}/>))
+            }
             
         </div>
     );

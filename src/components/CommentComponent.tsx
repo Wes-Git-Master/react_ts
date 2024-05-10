@@ -1,10 +1,17 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-const CommentComponent = () => {
+import {ICommentModel} from "../models/ICommentModel";
+
+interface IProps {
+    comment: ICommentModel
+}
+
+type IPropsType = IProps & { children?:React.ReactNode }
+
+const CommentComponent:FC<IPropsType> = ({comment}) => {
     return (
         <div>
-            CommentComponent
-            
+            <li>{comment.body}</li>
         </div>
     );
 };

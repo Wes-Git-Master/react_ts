@@ -5,8 +5,15 @@ interface IProps {
     post: IPostModel
 }
 
-type IPropsType = IProps & { children?:React.ReactNode }
-const PostComponent:FC<IPropsType> = ({post}) => {
+type IPropsType = IProps & { children?:React.ReactNode } & { lift?: (postId:number) => void }
+const PostComponent:FC<IPropsType> = ({post,lift}) => {
+
+    const onClickHandler = () => {
+        if (lift){
+            lift(post.id)
+        }
+    }
+
     return (
         <div>
             <hr/>
@@ -15,6 +22,9 @@ const PostComponent:FC<IPropsType> = ({post}) => {
             <p>userId - {post.userId}</p>
             <p>tags - {post.tags}</p>
             <p>reactions - {post.reactions}</p>
+            <div>
+                <button onClick={onClickHandler}>show comments to post</button>
+            </div>
 
         </div>
     );

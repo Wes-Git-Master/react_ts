@@ -2,6 +2,8 @@ import axios, {AxiosResponse} from "axios";
 
 import {IPostsResponseModel} from "../models/ResponseModel/IPostsResponseModel";
 
+import {ICommentsResponseModel} from "../models/ResponseModel/ICommentsResponseModel";
+
 
 const axiosInstance = axios.create({
     baseURL: 'https://dummyjson.com',
@@ -15,7 +17,9 @@ let requests = {
         }
     },
     comments: {
-
+        getAllCommentsOfSinglePost : (id:number):Promise<AxiosResponse<ICommentsResponseModel>> => {
+            return axiosInstance.get('/comments/post/' + id )
+        }
     }
 
 }
