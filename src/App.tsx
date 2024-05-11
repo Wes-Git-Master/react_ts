@@ -1,55 +1,46 @@
-import './App.css';
-import {useReducer} from "react";
+import React, {FC, useReducer} from 'react';
 
-interface CounterState {
-    count: number
-}
 
-interface CounterAction {
-    type: string;
-    payload: number;
-}
-
-//                                             {type:'res',payload:'???'}
-const callbackReducer = (state: CounterState, action: CounterAction): CounterState => {
+const reducerActions = (state:number,action:{type:string,payload:number}) => {
     switch (action.type) {
-        case 'inc':
-            state.count += action.payload;
-            return {...state}
-        case 'dec':
-            state.count -= action.payload;
-            return {...state};
-        case 'res':
-            state.count = action.payload;
-            return {...state};
+        case 'add':
+           return  state+action.payload;
+        case 'getBack':
+            return state-action.payload;
+        case 'reset':
+            return 0;
     }
-    return {count: -15005000};
+        return state
 }
 
-const App = () => {
+const App: FC = () => {
 
-    const [state, dispatch]
-        = useReducer(callbackReducer, {count: 0});
+    const [number,dispath] = useReducer(reducerActions,0);
+
+    const add = () => {
+        dispath({type:'add',payload:10})
+    }
+
+    const getBack = () => {
+        dispath({type:'getBack',payload:10})
+    }
+
+    const reset = () => {
+        dispath({type:'reset',payload:0})
+    }
+
 
 
     return (
-        <div>
-            <h2>{state.count}</h2>
-            <button onClick={() => {
-                dispatch({type: 'inc', payload: 100});
-            }}>inc
-            </button>
-            <button onClick={() => {
-                dispatch({type: 'dec', payload: 200});
-            }}>dec
-            </button>
-            <button onClick={() => {
-                dispatch({type: 'res', payload: -967654654});
+        <>
 
-            }}>res
-            </button>
+            <h2>Reducer demo.current value: {number}</h2>
+            <button onClick={add}>add</button>
+            <button onClick={getBack}>getBack</button>
+            <button onClick={reset}>reset</button>
+            <hr/>
 
-        </div>
+        </>
     );
 };
 
