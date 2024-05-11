@@ -1,16 +1,24 @@
-import React from 'react';
+import React, {FC} from 'react';
 import './App.css';
 import {useFetch} from "./custom-hooks/useFetch";
 
 
-const App = () => {
+interface IUser{
+    name: string
+}
 
-    let data = useFetch<{id:number,title:string,body:string}[]>('/posts',[]);
-    // let data = useFetch<UserModel[]>('/users', []);
+const App:FC = () => {
+    
+    const users = useFetch<IUser[]>('https://jsonplaceholder.typicode.com/','/users',[]);
+
+
     return (
         <div>
+
             {
-                data.map((item, index) => (<div>{item.id} {item.title}</div>))}
+                users.map((user,index) => (<div key={index}>{user.name}</div>))
+            }
+
 
         </div>
     );
