@@ -1,18 +1,26 @@
-import React, {FC, useEffect} from 'react';
+import React, {FC} from 'react';
 import {useFetch} from "../../custom hooks/useFetch";
 
 type IProps = {
-    id: number
+    id: number,
+    name?:string
 }
 const UserComponent:FC<IProps> = ({id}) => {
 
     console.log('UserComponent')
 
-    useFetch('https://jsonplaceholder.typicode.com','/users/' + id)
+    const users = useFetch('https://jsonplaceholder.typicode.com','/users/' + id,[])
+
+
 
     return (
         <div>
 
+            {
+
+                users.map((user) => <div>{user.name}</div>)
+
+            }
 
         </div>
     );
