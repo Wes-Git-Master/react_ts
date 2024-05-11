@@ -1,37 +1,24 @@
-import React, {useState} from 'react';
-import './App.css';
+import React, {FC, useState} from 'react';
 
-interface IState {
-    value: number;
-}
+const App: FC = () => {
 
-const App = () => {
+    let [number, setNumber] = useState<number>(0);
 
-    const [counter, setCounter] = useState<IState>({value: 0});
+    // let number = 0;
 
 
     const increment = () => {
+        setNumber(prevState => prevState + 1)
+        console.log(number)
+    }
 
-        setCounter(prevState => ({value: prevState.value + 1}));
-
-    };
-    const decrement = () => {
-        setCounter(prevState => ({value: prevState.value - 1}));
-
-    };
-    const reset = () => {
-        setCounter({value: 0});
-    };
     return (
-        <div>
+        <>
 
-            <h2>{counter.value}</h2>
+            <h2>{number}</h2>
             <button onClick={increment}>increment</button>
-            <button onClick={decrement}>decrement</button>
-            <button onClick={reset}>reset</button>
 
-
-        </div>
+        </>
     );
 };
 
