@@ -1,34 +1,33 @@
 import React, {FC, useReducer} from 'react';
 
 
-const reducerActions = (state:number,action:{type:string,payload:number}) => {
+const reducerActions = (state: number, action: { type: string, payload: number }) => {
     switch (action.type) {
         case 'add':
-           return  state+action.payload;
+            return state + action.payload;
         case 'getBack':
-            return state-action.payload;
+            return state - action.payload;
         case 'reset':
             return 0;
     }
-        return state
+    return state
 }
 
 const App: FC = () => {
 
-    const [number,dispath] = useReducer(reducerActions,0);
+    const [number, dispath] = useReducer(reducerActions, 0);
 
     const add = () => {
-        dispath({type:'add',payload:10})
+        dispath({type: 'add', payload: 10})
     }
 
     const getBack = () => {
-        dispath({type:'getBack',payload:10})
+        dispath({type: 'getBack', payload: 10})
     }
 
     const reset = () => {
-        dispath({type:'reset',payload:0})
+        dispath({type: 'reset', payload: 0})
     }
-
 
 
     return (
@@ -45,3 +44,4 @@ const App: FC = () => {
 };
 
 export default App;
+
