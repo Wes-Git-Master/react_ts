@@ -1,7 +1,9 @@
-import React from "react";
+import React, {memo} from "react";
 
-const Menu = () => {
+const Menu = memo(() => {
+
     console.log('menu')
+
     return (
 
         <div>
@@ -14,6 +16,6 @@ const Menu = () => {
         </div>
 
     );
-};
+});
 
 export default Menu;

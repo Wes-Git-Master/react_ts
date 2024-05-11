@@ -1,9 +1,12 @@
 import {useEffect, useState} from "react";
 
+type IProps = {
+    id: number,
+    name?:string
+}
+const useFetch = (url: string, endpoint: string) => {
 
-const useFetch = <T,>(url: string, endpoint: string, initialState: T) => {
-
-    const [data, setData] = useState(initialState);
+    const [data, setData] = useState<IProps[]>([]);
 
     useEffect(() => {
 
@@ -12,7 +15,7 @@ const useFetch = <T,>(url: string, endpoint: string, initialState: T) => {
             .then(value => {
                 setData(value)
             });
-    }, []);
+    }, [url,endpoint]);
 
     return data;
 

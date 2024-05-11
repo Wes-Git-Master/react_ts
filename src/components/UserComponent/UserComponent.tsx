@@ -9,16 +9,13 @@ const UserComponent:FC<IProps> = ({id}) => {
 
     console.log('UserComponent')
 
-    const users = useFetch('https://jsonplaceholder.typicode.com','/users/' + id,[])
-
-
+    const users = useFetch('https://jsonplaceholder.typicode.com','/users')
 
     return (
         <div>
 
             {
-
-                users.map((user) => <div>{user.name}</div>)
+                users.map(users => (<div key={users.id}> {users && users.name}</div>))
 
             }
 
