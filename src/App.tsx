@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
-import A from "./components/A";
-import B from "./components/B";
+import OriginalComponent1 from "./components/OriginalComponent1";
+import OriginalComponent2 from "./components/OriginalComponent2";
+
 
 
 const App = () => {
     return (
         <div>
-
-            <A foobar={'olololo'}/>
-            <B/>
+            <OriginalComponent1/>
+            <OriginalComponent2/>
 
         </div>
     );
