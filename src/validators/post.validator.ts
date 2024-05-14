@@ -11,9 +11,9 @@ export const postValidator = Joi.object({
             'number.max': 'userId cannot be more than 10'
         })
         .required(),
-    tittle: Joi
+    title: Joi
         .string()
-        .messages({'string.required': 'tittle cannot be empty'})
+        .messages({'string.required': 'title cannot be empty'})
         .required(),
     body: Joi
         .string()
