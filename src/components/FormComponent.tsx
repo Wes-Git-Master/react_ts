@@ -23,8 +23,8 @@ const FormComponent: FC = () => {
     const save = (post: IFormProps) => {
 
         requests.posts.savePost(post).then(value => {
-                setPost(value.data)
-            });
+            setPost(value.data)
+        });
     };
     return (
         <div>
@@ -36,7 +36,7 @@ const FormComponent: FC = () => {
                 {errors.title && <span>{errors.title.message}</span>}
                 <br/>
                 <input type="text" placeholder={'body'} {...register('body')}/>
-                {errors.body && <span>{errors.body.message}</span> }
+                {errors.body && <span>{errors.body.message}</span>}
                 <br/>
                 <button>send</button>
             </form>

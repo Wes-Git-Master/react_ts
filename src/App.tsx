@@ -5,13 +5,13 @@ import {FormComponent} from "./components/FormComponent";
 
 
 const App: FC = () => {
-  return (
-    <>
+    return (
+        <>
 
-        <FormComponent/>
+            <FormComponent/>
 
-    </>
-  );
+        </>
+    );
 }
 
 export default App;
