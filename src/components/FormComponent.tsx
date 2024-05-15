@@ -5,6 +5,7 @@ import {IFormProps} from "../models/IFormModel";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {postValidator} from "../validators/post.validator";
 import {IPostModel} from "../models/IPostModel";
+import {requests} from "../services/api.service";
 
 const FormComponent: FC = () => {
 
@@ -19,22 +20,10 @@ const FormComponent: FC = () => {
     const [post, setPost] = useState<IPostModel | null>(null);
 
 
-    const save = ({userId, title, body}: IFormProps) => {
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                userId: userId,
-                title: title,
-                body: body
-            })
-        })
-            .then(value => value.json())
-            .then(value => {
-                setPost(value)
+    const save = (post: IFormProps) => {
+
+        requests.posts.savePost(post).then(value => {
+                setPost(value.data)
             });
     };
     return (
@@ -47,7 +36,7 @@ const FormComponent: FC = () => {
                 {errors.title && <span>{errors.title.message}</span>}
                 <br/>
                 <input type="text" placeholder={'body'} {...register('body')}/>
-                {errors.body && <span>{errors.body.message}</span>}
+                {errors.body && <span>{errors.body.message}</span> }
                 <br/>
                 <button>send</button>
             </form>
