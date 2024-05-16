@@ -4,6 +4,7 @@ import React from "react";
 import {HomePage} from "../pages/HomePage/HomePage";
 import {UsersComponent} from "../components/UsersComponent/UsersComponent";
 import {PostsComponent} from "../components/PostsComponent/PostsComponent";
+import {CommentsComponent} from "../components/CommentsComponent/CommentsComponent";
 
 
 export const routerConfig = createBrowserRouter(
@@ -14,7 +15,8 @@ export const routerConfig = createBrowserRouter(
             children: [
                 {index:true, element: <HomePage/>},
                 {path: 'users', element: <UsersComponent/>},
-                {path: 'posts', element: <PostsComponent/>}
+                {path: 'posts', element: <PostsComponent/>},
+                {path: 'comments', element: <CommentsComponent/>}
             ]
         },
     ]

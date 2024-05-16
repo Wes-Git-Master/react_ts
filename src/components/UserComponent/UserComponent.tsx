@@ -9,8 +9,8 @@ type IPropsType = IProps & { children?: React.ReactNode }
 const UserComponent: FC<IPropsType> = ({user}) => {
     return (
         <div>
+            <h4>userId : {user.id}</h4>
             <ul>
-                <h4>userId : {user.id}</h4>
                 <li>Name : {user.name}</li>
                 <li>Username : {user.username}</li>
             </ul>

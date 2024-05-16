@@ -10,6 +10,8 @@ const HeaderComponent = () => {
             <Link to='users'>users page</Link>
             <br/>
             <Link to='posts'>posts page</Link>
+            <br/>
+            <Link to='comments'>comments page</Link>
             <hr/>
         </div>
     );
