@@ -9,7 +9,6 @@ const MainLayout: FC = () => {
             <HeaderComponent/>
             <Outlet/>
             <FooterComponent/>
-
         </div>
     );
 };

@@ -3,6 +3,8 @@ import MainLayout from "../layout/MainLayout";
 import React from "react";
 import {HomePage} from "../pages/HomePage/HomePage";
 import {UsersComponent} from "../components/UsersComponent/UsersComponent";
+import {PostsComponent} from "../components/PostsComponent/PostsComponent";
+
 
 export const routerConfig = createBrowserRouter(
     [
@@ -11,7 +13,8 @@ export const routerConfig = createBrowserRouter(
             element: <MainLayout/>,
             children: [
                 {index:true, element: <HomePage/>},
-                {path: 'users', element: <UsersComponent/>}
+                {path: 'users', element: <UsersComponent/>},
+                {path: 'posts', element: <PostsComponent/>}
             ]
         },
     ]

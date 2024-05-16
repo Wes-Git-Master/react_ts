@@ -1,4 +1,5 @@
 import axios, {AxiosResponse} from "axios";
+
 import {IUserModel} from "../model/IUserModel";
 
 const axiosInstance = axios.create({
@@ -14,7 +15,13 @@ let requests = {
         // getUserByUserId: async (userId: number): Promise<AxiosResponse<IUserModel>> => {
         //     return await axiosInstance.get(`/users/${userId}`)
         // }
-    }
+    },
+    // postApiService:{
+    //     getAllPosts: ():Promise<AxiosResponse<>> => {
+    //         return axiosInstance.get('posts')
+    //     }
+    // }
+
 };
 
 export {requests}
