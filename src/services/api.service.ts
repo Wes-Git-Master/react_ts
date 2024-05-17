@@ -1,5 +1,4 @@
 import axios, {AxiosResponse} from "axios";
-
 import {IUserModel} from "../model/IUserModel";
 import {IPostModel} from "../model/IPostModel";
 import {ICommentModel} from "../model/ICommentModel";
@@ -28,6 +27,6 @@ let requests = {
             return axiosInstance.get('comments')
         }
     }
-}
+};
 
-export {requests}
+export {requests};

@@ -3,7 +3,6 @@ import {requests} from "../../services/api.service";
 import {IPostModel} from "../../model/IPostModel";
 import {PostComponent} from "../PostComponent/PostComponent";
 
-
 const PostsComponent: FC = () => {
 
     const [posts, setPosts] = useState<IPostModel[]>([]);

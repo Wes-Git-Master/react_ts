@@ -3,13 +3,13 @@ import {requests} from "../../services/api.service";
 import {ICommentModel} from "../../model/ICommentModel";
 import {CommentComponent} from "../CommentComponent/CommentComponent";
 
-const CommentsComponent:FC = () => {
+const CommentsComponent: FC = () => {
 
-    const [comments,setComments] = useState<ICommentModel[]>([]);
+    const [comments, setComments] = useState<ICommentModel[]>([]);
 
     useEffect(() => {
-            requests.commentApiService.getAllComments().then(value => setComments(value.data))
-        }, []);
+        requests.commentApiService.getAllComments().then(value => setComments(value.data))
+    }, []);
 
     return (
         <>
