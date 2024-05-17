@@ -17,7 +17,7 @@ const ContactsComponent = () => {
         <div>
 
             {
-                contacts.map((contact,index) => (<ContactComponent key={index}/>))
+                contacts.map((contact,index) => (<ContactComponent key={index} contact={contact}/>))
             }
 
 
