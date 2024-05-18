@@ -1,16 +1,20 @@
 import React, {FC} from 'react';
 import {IPostModel} from "../../model/IPostModel";
-interface IProps{
-    post:IPostModel
+import styles from '../../styles/post.style.module.css'
+
+interface IProps {
+    post: IPostModel
 }
+
 type IPropsType = IProps & { children?: React.ReactNode }
-const PostComponent:FC<IPropsType> = ({post}) => {
+const PostComponent: FC<IPropsType> = ({post}) => {
     return (
         <>
-            <h4>postId : {post.id}</h4>
-             title : {post.title}
-            <br/>
-            <p>{post.body}</p>
+            <div className={styles.singlePostBlock}>
+                <p className={styles.postId}>postId : {post.id}</p>
+                <p className={styles.title}>Title : {post.title}</p>
+            </div>
+
         </>
     );
 };

@@ -1,8 +1,7 @@
+
 .singleUserBlock {
-    background-color: rgba(32, 173, 41, 0.15);
     width: 400px;
-    /*height: 51px;*/
-    margin: 0 0 0 24px;
+    margin: 0 0 0 30px;
     border-radius: 8px;
 }
 

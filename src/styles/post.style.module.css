@@ -1,0 +1,18 @@
+.singlePostBlock {
+    background-color: rgba(22, 69, 140, 0.09);
+    width: 735px;
+    margin: 0 0 0 30px;
+    border-radius: 6px;
+}
+
+.postId {
+    padding: 6px 0 0 20px;
+    height: 6px;
+    color: #c92727;
+}
+
+.title {
+    padding: 2px 0 20px 20px;
+    height: 6px;
+    color: rgb(15, 36, 197);
+}

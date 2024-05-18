@@ -8,8 +8,8 @@
 
 .header a {
     text-decoration: none;
-    margin-left: 50px;
-    color: #334fc9;
+    margin-left: 60px;
+    color: #1525da;
     font-size: 21px;
     transition: font-size 0.5s;
 }
@@ -21,7 +21,6 @@
 }
 
 .usersPostsCommentsBlock a {
-    margin-left: 50px;
     color: #078007;
     font-size: 22px;
 }

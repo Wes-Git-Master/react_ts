@@ -1,4 +1,8 @@
-.footerBlock{
-
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 55px;
+    background-color: rgba(52, 67, 199, 0.29);
 
 }

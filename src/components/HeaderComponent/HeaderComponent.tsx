@@ -4,13 +4,12 @@ import styles from '../../styles/header.style.module.css'
 const HeaderComponent = () => {
     return (
         <div className={styles.header}>
-            <NavLink to='/'> home </NavLink>
+            <NavLink to='/'> Home </NavLink>
             <div className={styles.usersPostsCommentsBlock}>
             <NavLink to='users'> users </NavLink>
             <NavLink to='posts'> posts </NavLink>
             <NavLink to='comments'> comments </NavLink>
             </div>
-            <hr/>
         </div>
     );
 };

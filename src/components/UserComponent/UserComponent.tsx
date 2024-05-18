@@ -9,12 +9,12 @@ interface IProps {
 type IPropsType = IProps & { children?: React.ReactNode }
 const UserComponent: FC<IPropsType> = ({user}) => {
     return (
-        <div>
+        <>
             <div className={styles.singleUserBlock}>
                 <p className={styles.userId}>id : {user.id}</p>
                 <p className={styles.userName}>Name : {user.name}</p>
             </div>
-        </div>
+        </>
     );
 };
 
