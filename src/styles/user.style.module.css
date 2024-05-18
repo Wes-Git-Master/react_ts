@@ -1,3 +1,20 @@
-.singleUserBlock p{
-    margin: 12px 0 0 12px;
+.singleUserBlock {
+    background-color: rgba(32, 173, 41, 0.15);
+    width: 400px;
+    /*height: 51px;*/
+    margin: 0 0 0 24px;
+    border-radius: 8px;
 }
+
+.userId {
+    padding: 2px 0 0 20px;
+    height: 6px;
+    color: #c92727;
+}
+
+.userName {
+    padding: 0 0 20px 20px;
+    height: 6px;
+    color: #0f24c5;
+}
+
