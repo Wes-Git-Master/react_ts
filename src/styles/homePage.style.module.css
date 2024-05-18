@@ -4,5 +4,9 @@
     align-items: center;
 }
 .imgBlock{
-    margin: 205px 0 222px 0;
+
+    margin: 90px 0 95px 0;
+}
+.img{
+    border-radius: 50px;
 }

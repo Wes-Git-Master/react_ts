@@ -4,5 +4,8 @@
     align-items: center;
     height: 55px;
     background-color: rgba(52, 67, 199, 0.29);
-
+}
+.footer p{
+    font-size: 20px;
+    color: rgba(185, 20, 20, 0.95);
 }
