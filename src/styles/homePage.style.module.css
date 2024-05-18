@@ -1,0 +1,8 @@
+.homePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.imgBlock{
+    margin: 205px 0 222px 0;
+}

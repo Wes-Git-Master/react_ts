@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {IUserModel} from "../../model/IUserModel";
-
+import styles from '../../styles/user.style.module.css'
 interface IProps {
     user: IUserModel
 }
@@ -8,12 +8,9 @@ interface IProps {
 type IPropsType = IProps & { children?: React.ReactNode }
 const UserComponent: FC<IPropsType> = ({user}) => {
     return (
-        <div>
-            <h4>userId : {user.id}</h4>
-            <ul>
-                <li>Name : {user.name}</li>
-                <li>Username : {user.username}</li>
-            </ul>
+        <div className={styles.singleUserBlock}>
+            <p>id : {user.id}</p>
+            <p>Name : {user.name}</p>
         </div>
     );
 };
