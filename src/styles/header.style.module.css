@@ -1,7 +1,28 @@
-.header{
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 55px;
+    background-color: rgba(11, 62, 229, 0.17);
 
 }
-.active{
-    text-decoration: none;
 
+.header a {
+    text-decoration: none;
+    margin-left: 50px;
+    color: #394fa6;
+    font-size: 21px;
+    transition: font-size 0.5s;
+}
+
+.header a:hover {
+    color: rgba(224, 17, 17, 0.61);
+    transition: font-size 0.7s;
+    font-size: 19px;
+}
+
+.usersPostsCommentsBlock a {
+    margin-left: 50px;
+    color: #078007;
+    font-size: 22px;
 }
