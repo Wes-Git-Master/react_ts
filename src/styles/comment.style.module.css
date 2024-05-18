@@ -1,16 +1,16 @@
-.singlePostBlock {
-    width: 735px;
+.singleCommentBlock {
+    width: 96vw;
     margin: 0 0 0 30px;
 }
 
-.postId {
+.commentId {
     padding: 6px 0 0 20px;
     height: 6px;
-    color: #1e14a6;
+    color: #148f17;
 }
 
-.title {
+.body {
     padding: 2px 0 20px 20px;
     height: 6px;
-    color: rgb(187, 15, 15);
+    color: rgb(69, 24, 183);
 }

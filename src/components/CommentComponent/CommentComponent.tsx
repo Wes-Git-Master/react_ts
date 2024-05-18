@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {ICommentModel} from "../../model/ICommentModel";
-
+import styles from '../../styles/comment.style.module.css'
 interface IProps {
     comment: ICommentModel
 }
@@ -9,11 +9,10 @@ type IPropsType = IProps & { children?: React.ReactNode }
 const CommentComponent: FC<IPropsType> = ({comment}) => {
     return (
         <>
-            <h4>commentId : {comment.id}</h4>
-            name: {comment.name}
-            <br/>
-            <p>body: {comment.body}</p>
-
+            <div className={styles.singleCommentBlock}>
+                <p className={styles.commentId}>commentId : {comment.id}</p>
+                <p className={styles.body}>body : {comment.body}</p>
+            </div>
         </>
     );
 };
