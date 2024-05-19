@@ -5,7 +5,7 @@ import {ErrorPage} from "../pages/ErrorPage/ErrorPage";
 import {HomePage} from "../pages/HomePage/HomePage";
 import {UsersPage} from "../pages/UsersPage/UsersPage";
 import {PostsPage} from "../pages/PostsPage/PostsPage";
-import {CommentsPage} from "../pages/CommentsPage/CommentsPage";
+
 
 export const routerConfig = createBrowserRouter(
     [
@@ -24,14 +24,7 @@ export const routerConfig = createBrowserRouter(
                 },
                 {
                     path: 'users/:id',
-                    element: <PostsPage/>},
-                {
-                    path: 'posts',
                     element: <PostsPage/>
-                },
-                {
-                    path: 'comments',
-                    element: <CommentsPage/>
                 }
             ]
         }

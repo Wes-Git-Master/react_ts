@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    justify-content: space-around;
+
     align-items: center;
     height: 55px;
     background-color: rgba(52, 67, 199, 0.29);
@@ -8,9 +8,9 @@
 
 .header a {
     text-decoration: none;
-    margin-left: 60px;
+    margin-left: 100px;
     color: #1525da;
-    font-size: 21px;
+    font-size: 23px;
     transition: font-size 0.5s;
 }
 
@@ -18,9 +18,4 @@
     color: rgba(161, 20, 20, 0.57);
     transition: font-size 0.7s;
     font-size: 19px;
-}
-
-.usersPostsCommentsBlock a {
-    color: #078007;
-    font-size: 22px;
 }

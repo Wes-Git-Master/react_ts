@@ -4,14 +4,19 @@
 }
 
 .postId {
-    padding: 6px 0 0 20px;
+    padding: 6px 0 15px 20px;
     height: 6px;
-    color: #1e14a6;
+    color: rgba(35, 25, 169, 0.85);
 }
 
 .title {
+    margin: 0;
     padding: 2px 0 20px 40px;
-    font-size: 18px;
+    font-size: 19px;
     height: 6px;
     color: rgb(187, 15, 15);
+}
+.body{
+    margin: 10px 0 0 0;
+    font-size: 20px;
 }
