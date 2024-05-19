@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import {IUserModel} from "../../model/IUserModel";
 import styles from '../../styles/user.style.module.css'
+import {NavLink} from "react-router-dom";
 
 interface IProps {
     user: IUserModel
@@ -12,7 +13,7 @@ const UserComponent: FC<IPropsType> = ({user}) => {
         <>
             <div className={styles.singleUserBlock}>
                 <p className={styles.userId}>id : {user.id}</p>
-                <p className={styles.userName}>Name : {user.name}</p>
+                <p className={styles.userName}><NavLink to={user.id.toString()} className={styles.NavLink}>Name : {user.name}</NavLink></p>
             </div>
         </>
     );

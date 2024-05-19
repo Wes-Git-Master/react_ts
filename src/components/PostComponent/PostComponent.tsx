@@ -13,6 +13,7 @@ const PostComponent: FC<IPropsType> = ({post}) => {
             <div className={styles.singlePostBlock}>
                 <p className={styles.postId}>postId : {post.id}</p>
                 <p className={styles.title}>Title : {post.title}</p>
+                <p>{post.body}</p>
             </div>
 
         </>

@@ -11,8 +11,13 @@
 }
 
 .userName {
-    padding: 0 0 20px 20px;
+    padding: 0 0 19px 20px;
     height: 6px;
+    color: #1324a8;
+}
+
+.NavLink {
+    text-decoration: none;
     color: #1324a8;
 }
 

@@ -20,8 +20,11 @@ export const routerConfig = createBrowserRouter(
                 },
                 {
                     path: 'users',
-                    element: <UsersPage/>
+                    element: <UsersPage/>,
                 },
+                {
+                    path: 'users/:id',
+                    element: <PostsPage/>},
                 {
                     path: 'posts',
                     element: <PostsPage/>
