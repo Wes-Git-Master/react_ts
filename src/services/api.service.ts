@@ -18,9 +18,9 @@ let requests = {
         // }
     },
     postApiService: {
-        getAllPosts: (): Promise<AxiosResponse<IPostModel[]>> => {
-            return axiosInstance.get('posts')
-        },
+        // getAllPosts: (): Promise<AxiosResponse<IPostModel[]>> => {
+        //     return axiosInstance.get('posts')
+        // },
         getPostsOfSingleUser: (userId:string): Promise<AxiosResponse<IPostModel[]>> => {
             return axiosInstance.get(`/users/${userId}/posts`)
         }
