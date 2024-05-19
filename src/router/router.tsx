@@ -1,11 +1,11 @@
 import React from "react";
-import MainLayout from "../layout/MainLayout";
 import {createBrowserRouter} from "react-router-dom";
-import {HomePage} from "../pages/HomePage/HomePage";
-import {UsersComponent} from "../components/UsersComponent/UsersComponent";
-import {PostsComponent} from "../components/PostsComponent/PostsComponent";
-import {CommentsComponent} from "../components/CommentsComponent/CommentsComponent";
+import MainLayout from "../layout/MainLayout";
 import {ErrorPage} from "../pages/ErrorPage/ErrorPage";
+import {HomePage} from "../pages/HomePage/HomePage";
+import {UsersPage} from "../pages/UsersPage/UsersPage";
+import {PostsPage} from "../pages/PostsPage/PostsPage";
+import {CommentsPage} from "../pages/CommentsPage/CommentsPage";
 
 export const routerConfig = createBrowserRouter(
     [
@@ -20,15 +20,15 @@ export const routerConfig = createBrowserRouter(
                 },
                 {
                     path: 'users',
-                    element: <UsersComponent/>
+                    element: <UsersPage/>
                 },
                 {
                     path: 'posts',
-                    element: <PostsComponent/>
+                    element: <PostsPage/>
                 },
                 {
                     path: 'comments',
-                    element: <CommentsComponent/>
+                    element: <CommentsPage/>
                 }
             ]
         }
