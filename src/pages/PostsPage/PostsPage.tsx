@@ -7,19 +7,16 @@ import {requests} from "../../services/api.service";
 
 const PostsPage = () => {
 
-    const {id} = useParams();
+    const {id: userId} = useParams();
 
-    // const location = useLocation();
-    // console.log(location)
-
-    const [posts,setPosts] = useState<IPostModel[]>([]);
+    const [posts, setPosts] = useState<IPostModel[]>([]);
 
     useEffect(() => {
-        if (id){
-            requests.postApiService.getPostsOfSingleUser(id).then(value => setPosts(value.data))
+        if (userId) {
+            requests.postApiService.getPostsOfSingleUser(userId).then(value => setPosts(value.data))
         }
 
-    }, [id]);
+    }, [userId]);
 
     return (
         <div>

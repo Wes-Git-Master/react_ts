@@ -16,7 +16,27 @@
     height: 6px;
     color: rgb(187, 15, 15);
 }
-.body{
+
+.body {
     margin: 10px 0 0 0;
     font-size: 20px;
+}
+
+.button {
+    margin: 10px 0 10px 20px;
+    font-size: 16px;
+    height: 30px;
+    border: rgba(0, 0, 0, 0.93) solid 1px;
+    border-radius: 4px;
+    background-color: rgba(182, 182, 182, 0.33);
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: rgba(65, 183, 38, 0.44);
+    transition: 0.1s;
+}
+
+button:active {
+    background-color: rgba(110, 19, 19, 0.13);
 }

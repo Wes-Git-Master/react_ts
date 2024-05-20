@@ -21,7 +21,7 @@ let requests = {
         // getAllPosts: (): Promise<AxiosResponse<IPostModel[]>> => {
         //     return axiosInstance.get('posts')
         // },
-        getPostsOfSingleUser: (userId:string): Promise<AxiosResponse<IPostModel[]>> => {
+        getPostsOfSingleUser: (userId: string): Promise<AxiosResponse<IPostModel[]>> => {
             return axiosInstance.get(`/users/${userId}/posts`)
         }
     },
@@ -29,7 +29,7 @@ let requests = {
         // getAllComments: (): Promise<AxiosResponse<ICommentModel[]>> => {
         //     return axiosInstance.get('comments')
         // },
-        getCommentsOfSinglePost:(postId:string):Promise<AxiosResponse<ICommentModel[]>> => {
+        getCommentsOfSinglePost: (postId: string): Promise<AxiosResponse<ICommentModel[]>> => {
             return axiosInstance.get(`/posts/${postId}/comments`)
         }
     }

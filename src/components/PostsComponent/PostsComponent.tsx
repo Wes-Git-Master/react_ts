@@ -3,11 +3,10 @@ import {IPostModel} from "../../model/IPostModel";
 import {PostComponent} from "../PostComponent/PostComponent";
 
 interface IProps {
-    posts:IPostModel[]
+    posts: IPostModel[]
 }
+
 const PostsComponent: FC<IProps> = ({posts}) => {
-
-
 
     return (
         <>

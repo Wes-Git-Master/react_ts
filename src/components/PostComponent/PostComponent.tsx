@@ -21,7 +21,10 @@ const PostComponent: FC<IPropsType> = ({post}) => {
                 <p className={styles.title}>Title : {post.title}</p>
                 <p className={styles.body}>{post.body}</p>
 
-                <button onClick={() => {navigate(post.id.toString())}}> show comments </button>
+                <button onClick={() => {
+                    navigate(post.id.toString())
+                }} className={styles.button}> show comments
+                </button>
             </div>
 
         </>

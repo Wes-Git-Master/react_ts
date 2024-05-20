@@ -7,21 +7,18 @@ import {useParams} from "react-router-dom";
 
 const CommentsPage = () => {
 
-    const {id} = useParams();
-
-    // const location = useLocation();
-    // console.log(location)
+    const {id: postId} = useParams();
 
     const [comments, setComments] = useState<ICommentModel[]>([]);
 
     useEffect(() => {
-        if (id) {
-            requests.commentApiService.getCommentsOfSinglePost(id.toString())
+        if (postId) {
+            requests.commentApiService.getCommentsOfSinglePost(postId.toString())
                 .then(value => setComments(value.data))
         }
 
 
-    }, [id]);
+    }, [postId]);
 
     return (
         <div>
