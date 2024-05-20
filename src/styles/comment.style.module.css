@@ -1,16 +1,16 @@
 .singleCommentBlock {
-    width: 96vw;
+    width: 50vw;
     margin: 0 0 0 30px;
 }
 
 .commentId {
-    padding: 6px 0 0 20px;
+    padding: 8px 0 3px 20px;
     height: 6px;
     color: #148f17;
 }
 
 .body {
-    padding: 2px 0 20px 20px;
+    padding: 0 0 75px 20px;
     height: 6px;
     color: rgb(69, 24, 183);
 }
