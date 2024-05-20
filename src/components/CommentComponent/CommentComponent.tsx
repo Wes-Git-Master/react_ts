@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import {ICommentModel} from "../../model/ICommentModel";
 import styles from '../../styles/comment.style.module.css'
+
 interface IProps {
     comment: ICommentModel
 }

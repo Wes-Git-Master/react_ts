@@ -9,6 +9,9 @@ const PostsPage = () => {
 
     const {id} = useParams();
 
+    // const location = useLocation();
+    // console.log(location)
+
     const [posts,setPosts] = useState<IPostModel[]>([]);
 
     useEffect(() => {

@@ -13,7 +13,13 @@ const UserComponent: FC<IPropsType> = ({user}) => {
         <>
             <div className={styles.singleUserBlock}>
                 <p className={styles.userId}>id : {user.id}</p>
-                <p className={styles.userName}><NavLink to={user.id.toString()} className={styles.NavLink}>Name : {user.name}</NavLink></p>
+                <p className={styles.userName}>
+                    <NavLink to={user.id.toString()}
+                             // state={{foo: 'bar'}}
+                             className={styles.NavLink}
+                    > name : {user.name}
+                    </NavLink>
+                </p>
             </div>
         </>
     );

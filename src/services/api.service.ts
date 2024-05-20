@@ -26,8 +26,11 @@ let requests = {
         }
     },
     commentApiService: {
-        getAllComments: (): Promise<AxiosResponse<ICommentModel[]>> => {
-            return axiosInstance.get('comments')
+        // getAllComments: (): Promise<AxiosResponse<ICommentModel[]>> => {
+        //     return axiosInstance.get('comments')
+        // },
+        getCommentsOfSinglePost:(postId:string):Promise<AxiosResponse<ICommentModel[]>> => {
+            return axiosInstance.get(`/posts/${postId}/comments`)
         }
     }
 };
