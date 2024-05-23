@@ -12,8 +12,6 @@ const PostComponent: FC<IPropsType> = ({post}) => {
 
     const navigate = useNavigate();
 
-    console.log(navigate)
-
     return (
         <>
             <div className={styles.singlePostBlock}>
