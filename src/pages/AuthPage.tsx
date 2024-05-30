@@ -9,4 +9,4 @@ const AuthPage = () => {
     );
 };
 
-export {AuthPage};
+export default AuthPage;

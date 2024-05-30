@@ -1,12 +1,13 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
+import styles from
 
 const HeaderComponent = () => {
     return (
         <div>
-            <ul>
-                <li><NavLink to={'/'}> auth page</NavLink></li>
-                <li><NavLink to={'cars'}> cars page</NavLink></li>
+            <ul className={}>
+                <p><NavLink to={'/'}> auth page</NavLink></p>
+                <p><NavLink to={'cars'}> cars page</NavLink></p>
             </ul>
             <hr/>
         </div>
