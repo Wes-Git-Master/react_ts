@@ -8,7 +8,6 @@ const retrieveLocalStorageData = <T, >(key: string) => {
     const pair = JSON.parse(pairJSON);
 
     return pair as T
-
 }
 
 export {retrieveLocalStorageData}
