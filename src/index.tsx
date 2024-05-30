@@ -5,6 +5,7 @@ import {RouterProvider} from "react-router-dom";
 import {routerConfig} from "./router/router";
 
 
+
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
