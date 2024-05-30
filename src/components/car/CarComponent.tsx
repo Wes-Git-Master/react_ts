@@ -1,11 +1,7 @@
 import React, {FC} from 'react';
-import {ICarWithAuth} from "./models/ICarWithAuth";
+import {ICarsProps} from "../../models/ICarsProps";
 
-interface IProps{
-    cars:ICarWithAuth[]
-}
-
-const CarsComponent:FC<IProps> = ({cars}) => {
+const CarComponent:FC<ICarsProps> = ({cars}) => {
     return (
         <div>
             {
@@ -22,9 +18,9 @@ const CarsComponent:FC<IProps> = ({cars}) => {
                     </div>
                 ))
             }
-            
+
         </div>
     );
 };
 
-export {CarsComponent};
+export {CarComponent};

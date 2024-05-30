@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {carService} from "../services/api.service";
 import {ICarWithAuth} from "../models/ICarWithAuth";
-import {CarsComponent} from "../CarsComponent";
+import {CarsComponent} from "../components/cars/CarsComponent";
 
 const CarsPage = () => {
 

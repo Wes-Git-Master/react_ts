@@ -8,7 +8,6 @@ const HeaderComponent = () => {
             <div className={styles.headerBlock}>
                 <div><NavLink to={'/'} > Login </NavLink></div>
                 <div><NavLink to={'cars'}> Cars</NavLink></div>
-                <hr/>
             </div>
         </div>
     );
