@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, {AxiosError} from "axios";
 import {AuthDataModel} from "../models/AuthDataModel";
 import {ITokenObtainPair} from "../models/ITokenObtainPair";
 import {ICarPaginatedModel} from "../models/ICarPaginatedModel";
@@ -36,8 +36,21 @@ const authService = {
 const carService = {
     getCars: async (): Promise<ICarPaginatedModel> => {
 
-        const response = await axiosInstance.get<ICarPaginatedModel>('/cars');
-        return response.data
+        try {
+            const response = await axiosInstance.get<ICarPaginatedModel>('/cars');
+            return response.data;
+
+        } catch (e) {
+            const axiosError = e as AxiosError;
+            if (axiosError?.response?.status === 401) {
+                const refreshToken = retrieveLocalStorageData<ITokenObtainPair>('tokenPair').refresh;
+                await authService.refresh(refreshToken);
+                await carService.getCars();
+
+
+            }
+
+        }
 
     }
 }
