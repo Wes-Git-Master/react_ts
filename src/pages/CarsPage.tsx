@@ -5,7 +5,7 @@ const CarsPage = () => {
 
     useEffect(() => {
 
-        carService.getCars()
+        carService.getCars().then(value => console.log(value))
 
         }, []);
 

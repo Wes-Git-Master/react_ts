@@ -2,11 +2,18 @@ import axios from "axios";
 import {AuthDataModel} from "../models/AuthDataModel";
 import {ITokenObtainPair} from "../models/ITokenObtainPair";
 import {ICarPaginatedModel} from "../models/ICarPaginatedModel";
+import {retrieveLocalStorageData} from "../helpers/helpers";
 
 const axiosInstance = axios.create({
     baseURL: 'http://owu.linkpc.net/carsAPI/v2',
     headers: {}
 });
+
+axiosInstance.interceptors.request.use((request) => {
+    if (localStorage.getItem('tokenPair') && request.url !== '/auth/refresh')
+        request.headers.set('Authorization', 'Bearer' + retrieveLocalStorageData<ITokenObtainPair>('tokenPair').access)
+    return request
+})
 
 const authService = {
     authentication: async (authData: AuthDataModel): Promise<boolean> => {
@@ -25,14 +32,6 @@ const authService = {
 
     }
 }
-
-axiosInstance.interceptors.request.use((request) => {
-
-    request.headers.set('Authorization', 'Bearer' + localStorage.getItem('tokenPair'))
-
-
-    return request
-})
 
 const carService = {
     getCars: async (): Promise<ICarPaginatedModel> => {
