@@ -7,10 +7,12 @@ const CarsPage = () => {
 
         carService.getCars().then(value => console.log(value))
 
-        }, []);
+    }, []);
 
     return (
         <div>
+
+            Cars Page
 
         </div>
     );

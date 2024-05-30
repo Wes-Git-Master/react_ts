@@ -5,7 +5,7 @@ import {ICarPaginatedModel} from "../models/ICarPaginatedModel";
 import {retrieveLocalStorageData} from "../helpers/helpers";
 
 const axiosInstance = axios.create({
-    baseURL: 'http://owu.linkpc.net/carsAPI/v2',
+    baseURL: 'http://185.69.152.209/carsAPI/v2',
     headers: {}
 });
 
