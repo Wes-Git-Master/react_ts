@@ -29,13 +29,16 @@ const authService = {
         }
 
         return !!(response?.data?.access && response?.data?.refresh)
+    },
+    refresh: async (refreshToken: string) => {
+        const response = await axiosInstance.post<ITokenObtainPair>('/auth/refresh', {refresh: refreshToken});
+        localStorage.setItem('tokenPair', JSON.stringify(response.data));
 
     }
 }
 
 const carService = {
-    getCars: async (): Promise<ICarPaginatedModel> => {
-
+    getCars: async (): Promise<ICarPaginatedModel>  => {
         try {
             const response = await axiosInstance.get<ICarPaginatedModel>('/cars');
             return response.data;
