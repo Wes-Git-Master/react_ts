@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {CarComponent} from "../car/CarComponent";
+import {CarComponent} from "../CarComponent/CarComponent";
 import {ICarWithAuth} from "../../models/ICarWithAuth";
 
 interface ICarsProps {
