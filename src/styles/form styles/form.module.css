@@ -1,19 +1,20 @@
 
-.formBlock{
+.formBlock {
     margin: 15px 0 25px 10px;
 }
 
-.loginFormStatus{
+.loginFormStatus {
     display: flex;
     align-items: center;
     margin-bottom: 4px;
 }
+
 .loginFormStatus h3 {
-    margin: 10px 0 15px 0 ;
+    margin: 10px 0 15px 0;
 }
 
 
-.loginStatus{
+.loginStatus {
     display: flex;
     justify-content: center;
     border: rgba(11, 36, 164, 0.22) 3px solid;
@@ -25,10 +26,10 @@
     background-color: rgba(173, 24, 24, 0.04);
 }
 
-.loginFormStatus div{
+.loginFormStatus div {
     color: rgba(183, 15, 15, 0.79);
 }
 
-.loginFormStatus span{
+.loginFormStatus span {
     color: rgba(14, 155, 7, 0.87);
 }
