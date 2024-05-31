@@ -44,11 +44,9 @@ const authService = {
 /***********************************   carService   ****************************************/
 
 const carService = {
-
     getCars: async (): Promise<ICarPaginatedModel | null> => {
-
         try {
-            const response = await axiosInstance.get<ICarPaginatedModel>('/cars');
+           const response = await axiosInstance.get<ICarPaginatedModel>('/cars');
             return response.data;
         } catch (e) {
             let axiosError = e as AxiosError;
