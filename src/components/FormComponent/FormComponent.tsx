@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {useForm} from "react-hook-form";
 import {AuthDataModel} from "../../models/auth models/AuthDataModel";
 import {authService} from "../../services/api.service";
+import styles from "../../styles/form styles/form.module.css"
 
 const FormComponent = () => {
 
@@ -22,9 +23,13 @@ const FormComponent = () => {
     /*******************************************************************************************/
 
     return (
-        <div>
-            <h3> Login form</h3>
-            {isAuthState ? <div> ok </div> : <div>not ok</div>}
+        <div className={styles.formBlock}>
+            <div className={styles.loginFormStatus}>
+                <h3> Login form</h3>
+                {isAuthState ? <span className={styles.loginStatus}> ok </span> :
+                    <div className={styles.loginStatus}>not ok</div>}
+            </div>
+
             <form onSubmit={handleSubmit(authenticate)}>
                 <input type="text" {...register('username')}/>
                 <input type="text" {...register('password')}/>
