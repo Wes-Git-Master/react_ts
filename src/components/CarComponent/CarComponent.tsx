@@ -5,24 +5,17 @@ interface ICarProps {
     car: ICarWithAuth
 }
 
-const CarComponent:FC<ICarProps> = ({car}) => {
+const CarComponent: FC<ICarProps> = ({car}) => {
     return (
         <div>
-            {
-
-                    <div key={car.id}>
-                        <ul>
-                            <li>id: {car.id}</li>
-                            <li>brand: {car.brand}</li>
-                            <li>year: {car.year}</li>
-                            <li>price: {car.price}</li>
-                        </ul>
-
-
-                    </div>
-
-            }
-
+            <div>
+                <ul>
+                    <li>id: {car.id}</li>
+                    <li>brand: {car.brand}</li>
+                    <li>year: {car.year}</li>
+                    <li>price: {car.price}</li>
+                </ul>
+            </div>
         </div>
     );
 };

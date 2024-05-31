@@ -10,7 +10,7 @@ const FormComponent = () => {
     const {
         handleSubmit,
         register
-    } = useForm<AuthDataModel>();
+    } = useForm<AuthDataModel>({defaultValues:{username:'Wes_1',password: 'P******d1'}});
 
     const [isAuthState, setIsAuthState] = useState<boolean>(false);
 
