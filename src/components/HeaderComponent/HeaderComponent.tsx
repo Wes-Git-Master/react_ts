@@ -3,6 +3,9 @@ import {NavLink} from "react-router-dom";
 import styles from "../../styles/header.module.css"
 
 const HeaderComponent = () => {
+
+    /*******************************************************************************************/
+
     return (
         <div>
             <div className={styles.headerBlock}>

@@ -1,7 +1,7 @@
 import axios, {AxiosError} from "axios";
-import {AuthDataModel} from "../models/AuthDataModel";
-import {ITokenObtainPair} from "../models/ITokenObtainPair";
-import {ICarPaginatedModel} from "../models/ICarPaginatedModel";
+import {AuthDataModel} from "../models/auth models/AuthDataModel";
+import {ITokenObtainPair} from "../models/auth models/ITokenObtainPair";
+import {ICarPaginatedModel} from "../models/cars models/ICarPaginatedModel";
 import {retrieveLocalStorageData} from "../helpers/helpers";
 
 const axiosInstance = axios.create({
@@ -9,7 +9,16 @@ const axiosInstance = axios.create({
     headers: {}
 });
 
-/*******************************************************************************************/
+/***********************************   interceptors   ***************************************/
+
+axiosInstance.interceptors.request.use((request) => {
+
+    if (localStorage.getItem('tokenPair') && (request.url !== '/auth' && request.url !== '/auth/refresh'))
+        request.headers.set('Authorization', 'Bearer ' + retrieveLocalStorageData<ITokenObtainPair>('tokenPair').access)
+
+    return request
+})
+/***********************************   authService   ***************************************/
 
 const authService = {
     authentication: async (authData: AuthDataModel): Promise<boolean> => {
@@ -32,17 +41,7 @@ const authService = {
     }
 }
 
-/*******************************************************************************************/
-
-axiosInstance.interceptors.request.use((request) => {
-
-    if (localStorage.getItem('tokenPair') && (request.url !== '/auth' && request.url !== '/auth/refresh'))
-        request.headers.set('Authorization', 'Bearer ' + retrieveLocalStorageData<ITokenObtainPair>('tokenPair').access)
-
-    return request
-})
-
-/*******************************************************************************************/
+/***********************************   carService   ****************************************/
 
 const carService = {
 

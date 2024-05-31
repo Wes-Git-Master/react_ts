@@ -6,14 +6,16 @@ import CarsPage from "../pages/CarsPage";
 
 
 export const browserRouter = createBrowserRouter([
+
     {
         path: '/',
         element: <MainLayout/>,
         errorElement: <ErrorLayout/>,
         children: [
             {index: true, element: <AuthPage/>},
-            {path:'cars',element:<CarsPage/>},
+            {path: 'cars', element: <CarsPage/>},
         ]
     }
+
 ]);
 

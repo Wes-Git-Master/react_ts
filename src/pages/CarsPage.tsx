@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {carService} from "../services/api.service";
-import {ICarWithAuth} from "../models/ICarWithAuth";
+import {ICarWithAuth} from "../models/cars models/ICarWithAuth";
 import {CarsComponent} from "../components/CarsComponent/CarsComponent";
 
 const CarsPage = () => {
+
+    /*******************************************************************************************/
 
     const [cars,setCars] = useState<ICarWithAuth[]>([]);
 
@@ -16,6 +18,8 @@ const CarsPage = () => {
         })
 
     }, []);
+
+    /*******************************************************************************************/
 
     return (
         <div>

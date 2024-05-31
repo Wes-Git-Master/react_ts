@@ -1,11 +1,14 @@
 import React, {FC} from 'react';
-import {ICarWithAuth} from "../../models/ICarWithAuth";
+import {ICarWithAuth} from "../../models/cars models/ICarWithAuth";
 
 interface ICarProps {
     car: ICarWithAuth
 }
 
 const CarComponent: FC<ICarProps> = ({car}) => {
+
+    /*******************************************************************************************/
+
     return (
         <div>
             <div>
