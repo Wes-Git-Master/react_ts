@@ -1,26 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {carService} from "../services/api.service";
 import {ICarWithAuth} from "../models/cars models/ICarWithAuth";
 import {CarsComponent} from "../components/CarsComponent/CarsComponent";
 
-const CarsPage = () => {
+
+const CarsPage: FC = () => {
 
     /*******************************************************************************************/
 
     const [cars, setCars] = useState<ICarWithAuth[]>([]);
 
+    useEffect(() => {
 
-        useEffect(() => {
+        carService.getCars().then(value => {
+            if (value) {
+                setCars(value.items)
+            }
+        })
 
-                carService.getCars().then(value => {
-                    if (value) {
-                        setCars(value.items)
-                    }
-                })
-
-
-        }, []);
-
+    }, []);
 
 
     /*******************************************************************************************/
