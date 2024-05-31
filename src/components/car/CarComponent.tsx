@@ -1,11 +1,15 @@
 import React, {FC} from 'react';
-import {ICarsProps} from "../../models/ICarsProps";
+import {ICarWithAuth} from "../../models/ICarWithAuth";
 
-const CarComponent:FC<ICarsProps> = ({cars}) => {
+interface ICarProps {
+    car: ICarWithAuth
+}
+
+const CarComponent:FC<ICarProps> = ({car}) => {
     return (
         <div>
             {
-                cars.map(car => (
+
                     <div key={car.id}>
                         <ul>
                             <li>id: {car.id}</li>
@@ -16,7 +20,7 @@ const CarComponent:FC<ICarsProps> = ({cars}) => {
 
 
                     </div>
-                ))
+
             }
 
         </div>
