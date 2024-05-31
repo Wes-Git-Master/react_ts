@@ -7,11 +7,11 @@ const CarsPage = () => {
 
     /*******************************************************************************************/
 
-    const [cars,setCars] = useState<ICarWithAuth[]>([]);
+    const [cars, setCars] = useState<ICarWithAuth[]>([]);
 
     useEffect(() => {
 
-        carService.getCars().then(value =>{
+        carService.getCars().then(value => {
             if (value) {
                 setCars(value.items)
             }
@@ -23,7 +23,7 @@ const CarsPage = () => {
 
     return (
         <div>
-                <CarsComponent cars={cars}/>
+            <CarsComponent cars={cars}/>
         </div>
     );
 };

@@ -1,4 +1,4 @@
-.headerBlock{
+.headerBlock {
     display: flex;
 }
 
@@ -10,11 +10,10 @@
     width: 100px;
 }
 
-.headerBlock div:hover{
+.headerBlock div:hover {
     background-color: rgba(30, 58, 196, 0.18);
     transition: 0.3s;
 }
-
 
 .headerBlock a {
     display: flex;
@@ -22,5 +21,4 @@
     justify-content: center;
     text-decoration: none;
     font-size: 20px;
-
 }

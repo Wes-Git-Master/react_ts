@@ -6,7 +6,7 @@ interface ICarsProps {
     cars: ICarWithAuth[]
 }
 
-const CarsComponent:FC<ICarsProps> = ({cars}) => {
+const CarsComponent: FC<ICarsProps> = ({cars}) => {
 
     /*******************************************************************************************/
 

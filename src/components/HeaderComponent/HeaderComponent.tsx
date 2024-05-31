@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
-import styles from "../../styles/header.module.css"
+import styles from "../../styles/header styles/header.module.css"
 
 const HeaderComponent = () => {
 
@@ -9,7 +9,7 @@ const HeaderComponent = () => {
     return (
         <div>
             <div className={styles.headerBlock}>
-                <div><NavLink to={'/'} > Login </NavLink></div>
+                <div><NavLink to={'/'}> Login </NavLink></div>
                 <div><NavLink to={'cars'}> Cars</NavLink></div>
             </div>
         </div>

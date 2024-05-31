@@ -4,7 +4,6 @@ import {ErrorLayout} from "../layouts/errror/ErrorLayout";
 import AuthPage from "../pages/AuthPage";
 import CarsPage from "../pages/CarsPage";
 
-
 export const browserRouter = createBrowserRouter([
 
     {
