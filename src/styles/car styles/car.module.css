@@ -1,0 +1,16 @@
+.carBlock {
+    margin: 25px;
+    border: rgba(0, 0, 0, 0.71) 1px solid;
+    border-radius: 15px;
+    width: 450px;
+}
+
+.carBlock li {
+    font-size: 12px;
+}
+
+.carBlock img {
+    margin: 23px 0 0 23px;
+    width: 400px;
+    border-radius: 12px;
+}
