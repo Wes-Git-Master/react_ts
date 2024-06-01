@@ -11,13 +11,12 @@ const CarsPage: FC = () => {
 
     useEffect(() => {
 
-
         carService.getCars().then(value => {
             if (value) {
                 setCars(value.items)
             }
-        })
 
+        })
 
     }, []);
 

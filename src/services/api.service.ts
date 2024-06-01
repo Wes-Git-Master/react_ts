@@ -27,8 +27,6 @@ const authService = {
         try {
             response = await axiosInstance.post<ITokenObtainPair>('/auth', authData);
             localStorage.setItem('tokenPair', JSON.stringify(response.data))
-
-
         } catch (e) {
             console.log(e)
         }
@@ -46,7 +44,7 @@ const authService = {
 const carService = {
     getCars: async (): Promise<ICarPaginatedModel | null> => {
         try {
-           const response = await axiosInstance.get<ICarPaginatedModel>('/cars');
+            const response = await axiosInstance.get<ICarPaginatedModel>('/cars');
             return response.data;
         } catch (e) {
             let axiosError = e as AxiosError;
