@@ -3,7 +3,6 @@ import {carService} from "../services/api.service";
 import {ICarWithAuth} from "../models/cars models/ICarWithAuth";
 import {CarsComponent} from "../components/CarsComponent/CarsComponent";
 
-
 const CarsPage: FC = () => {
 
     /*******************************************************************************************/
@@ -12,11 +11,13 @@ const CarsPage: FC = () => {
 
     useEffect(() => {
 
+
         carService.getCars().then(value => {
             if (value) {
                 setCars(value.items)
             }
         })
+
 
     }, []);
 
