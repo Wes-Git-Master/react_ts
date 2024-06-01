@@ -32,8 +32,7 @@ const CarsPage: FC = () => {
         })
 
 
-
-    }, []);
+    }, [query]);
 
 
     /*******************************************************************************************/
@@ -52,7 +51,7 @@ const CarsPage: FC = () => {
     return (
         <div>
             <CarsComponent cars={carPaginatedObject.items}/>
-            <PaginationComponent changePage={changePage}/>
+            <PaginationComponent next={carPaginatedObject.next} prev={carPaginatedObject.prev} changePage={changePage}/>
         </div>
     );
 };
