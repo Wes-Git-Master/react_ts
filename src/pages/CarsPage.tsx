@@ -50,8 +50,8 @@ const CarsPage: FC = () => {
 
     return (
         <div>
-            <CarsComponent cars={carPaginatedObject.items}/>
             <PaginationComponent next={carPaginatedObject.next} prev={carPaginatedObject.prev} changePage={changePage}/>
+            <CarsComponent cars={carPaginatedObject.items}/>
         </div>
     );
 };

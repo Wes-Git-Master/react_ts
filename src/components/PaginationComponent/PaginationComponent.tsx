@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {IPaginationPageModel} from "../../models/pagination/IPaginationPageModel";
-
+import styles from "../../styles/car styles/car.module.css"
 interface IProps {
     changePage: (action: string) => void,
     next: null | IPaginationPageModel,
@@ -9,7 +9,7 @@ interface IProps {
 
 const PaginationComponent: FC<IProps> = ({next, prev, changePage}) => {
     return (
-        <div>
+        <div className={styles.buttons}>
 
             <button
                 disabled={!prev}
