@@ -1,11 +1,11 @@
 const retrieveLocalStorageData = <T, >(key: string) => {
 
-    const pairJSON = localStorage.getItem(key) || '';
-    if (!pairJSON) {
+    const itemLocalStorage = localStorage.getItem(key) || '';
+    if (!itemLocalStorage) {
         return {} as T
     }
-    const pair = JSON.parse(pairJSON);
-    return pair as T
+    const parseItem = JSON.parse(itemLocalStorage);
+    return parseItem as T
 
 }
 
