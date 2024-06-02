@@ -1,16 +1,17 @@
 import React, {FC, useEffect, useState} from 'react';
-import {carService} from "../services/api.service";
+import {authService, carService} from "../services/api.service";
 import {CarsComponent} from "../components/CarsComponent/CarsComponent";
 import {ICarPaginatedModel} from "../models/cars models/ICarPaginatedModel";
-import {useSearchParams} from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 import {PaginationComponent} from "../components/PaginationComponent/PaginationComponent";
+import {AxiosError} from "axios";
 
 const CarsPage: FC = () => {
 
     /*******************************************************************************************/
 
+    const navigate = useNavigate();
     const [query] = useSearchParams();
-
     const [carPaginatedObject, setCarPaginatedObject] = useState<ICarPaginatedModel>({
 
         items: [],
@@ -23,15 +24,32 @@ const CarsPage: FC = () => {
 
     useEffect(() => {
 
-        carService.getCars(query.get('page') || '1').then(value => {
-            if (value) {
-                setCarPaginatedObject(value)
+        const getCarsData = async () => {
+
+            try {
+                const response = await carService.getCars(query.get('page') || '1');
+                if (response) {
+                    setCarPaginatedObject(response)
+                }
+            } catch (e) {
+                const axiosError = e as AxiosError;
+                if (axiosError && axiosError?.response?.status === 401) {
+                    try {
+                        await authService.refresh()
+                    } catch (e) {
+                        return navigate('/')
+                    }
+                    const response = await carService.getCars(query.get('page') || '1');
+                    if (response) {
+                        setCarPaginatedObject(response)
+                    }
+                }
             }
+        }
 
-            // console.log(value)
-        })
+        getCarsData().then()
 
-    }, [query]);
+    }, [query, navigate]);
 
     /*******************************************************************************************/
 

@@ -2,7 +2,6 @@ import React, {FC} from 'react';
 import {IPaginationPageModel} from "../../models/pagination/IPaginationPageModel";
 import styles from "../../styles/car styles/car.module.css"
 import {useSearchParams} from "react-router-dom";
-
 interface IProps {
     next: null | IPaginationPageModel,
     prev: null | IPaginationPageModel
@@ -28,15 +27,15 @@ const PaginationComponent: FC<IProps> = ({next, prev}) => {
             <button
                 disabled={!prev}
                 onClick={() => {
-                    changePage('prev')
-                }}>prev
+                changePage('prev')
+            }}>prev
             </button>
 
             <button
                 disabled={!next}
                 onClick={() => {
-                    changePage('next')
-                }}>next
+                changePage('next')
+            }}>next
             </button>
 
         </div>
