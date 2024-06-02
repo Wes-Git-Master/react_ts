@@ -9,7 +9,7 @@ const CarsPage: FC = () => {
 
     /*******************************************************************************************/
 
-    const [query, setQuery] = useSearchParams({page: '1'});
+    const [query] = useSearchParams();
 
     const [carPaginatedObject, setCarPaginatedObject] = useState<ICarPaginatedModel>({
 
@@ -31,26 +31,13 @@ const CarsPage: FC = () => {
             // console.log(value)
         })
 
-
     }, [query]);
-
 
     /*******************************************************************************************/
 
-    const changePage = (action: string) => {
-        switch (action) {
-            case 'next':
-                setQuery({...carPaginatedObject.next})
-                break;
-            case 'prev':
-                setQuery({...carPaginatedObject.prev})
-                break;
-        }
-    };
-
     return (
         <div>
-            <PaginationComponent next={carPaginatedObject.next} prev={carPaginatedObject.prev} changePage={changePage}/>
+            <PaginationComponent next={carPaginatedObject.next} prev={carPaginatedObject.prev}/>
             <CarsComponent cars={carPaginatedObject.items}/>
         </div>
     );
