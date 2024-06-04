@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
-import {IUserWithPostsType} from "../models/IUserWithPostsType";
+import {UserWithPostsType} from "../models/UserWithPostsType";
 
 interface IProps {
-    items: IUserWithPostsType[]
+    items: UserWithPostsType[]
 }
 
 const UserPostsComponent: FC<IProps> = ({items}) => {
@@ -13,7 +13,7 @@ const UserPostsComponent: FC<IProps> = ({items}) => {
 
                     {item.name}
                     <ul>
-                        {item.posts.map((post) => (<li key={post.id}>{post.title}</li>))}
+                        {item.posts.map((post) => (<li key={post.id}><b>{post.title}</b></li>))}
                     </ul>
 
                 </div>)

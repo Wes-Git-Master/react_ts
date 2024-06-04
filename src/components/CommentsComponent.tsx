@@ -4,7 +4,7 @@ import {useContextProvider} from "../context/ContextProvider";
 
 const CommentsComponent = () => {
 
-    const {commentStore:{allComments}} = useContextProvider();
+    const {commentStore: {allComments}} = useContextProvider();
 
     return (
         <div>
