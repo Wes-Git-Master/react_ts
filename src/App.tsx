@@ -9,21 +9,28 @@ import {postService, userService} from "./services/api.service";
 
 const App: FC = () => {
 
-    const [users,setUsers] = useState<IUserModel[]>([]);
-    const [posts,setPosts] = useState<IPostModel[]>([]);
+    const [users, setUsers] = useState<IUserModel[]>([]);
+    const [posts, setPosts] = useState<IPostModel[]>([]);
+    const [favoriteUserState, setFavoriteUserState] = useState<IUserModel | null>(null);
 
     useEffect(() => {
         userService.getUsers().then(value => setUsers(value.data))
         postService.getPosts().then(value => setPosts(value.data))
-        }, []);
+    }, []);
 
+    const lift = (obj: IUserModel) => {
+        setFavoriteUserState(obj)
+    }
 
     return (
         <div>
+            <HeaderComponent/>
+
             <Context.Provider value={
                 {
                     userStore: {
-                        allUsers: users
+                        allUsers: users,
+                        setFavoriteUser: (obj: IUserModel) => {lift(obj)}
                     },
                     postStore: {
                         allPosts: posts
@@ -31,9 +38,12 @@ const App: FC = () => {
                 }
 
             }>
-                <HeaderComponent/>
                 <Outlet/>
             </Context.Provider>
+
+            <hr/>
+            {favoriteUserState && <div>{favoriteUserState.email}</div>}
+            <hr/>
         </div>
     );
 };
