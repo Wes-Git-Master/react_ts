@@ -30,7 +30,9 @@ const App: FC = () => {
                 {
                     userStore: {
                         allUsers: users,
-                        setFavoriteUser: (obj: IUserModel) => {lift(obj)}
+                        setFavoriteUser: (obj: IUserModel) => {
+                            lift(obj)
+                        }
                     },
                     postStore: {
                         allPosts: posts

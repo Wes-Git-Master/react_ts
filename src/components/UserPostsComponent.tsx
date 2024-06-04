@@ -1,10 +1,11 @@
 import React, {FC} from 'react';
 import {IUserWithPostsType} from "../models/IUserWithPostsType";
 
-interface IProps{
+interface IProps {
     items: IUserWithPostsType[]
 }
-const UserPostsComponent:FC<IProps> = ({items}) => {
+
+const UserPostsComponent: FC<IProps> = ({items}) => {
     return (
         <div>
             {
@@ -12,10 +13,10 @@ const UserPostsComponent:FC<IProps> = ({items}) => {
 
                     {item.name}
                     <ul>
-                        {item.posts.map((post)=> (<li key={post.id}>{post.title}</li>))}
+                        {item.posts.map((post) => (<li key={post.id}>{post.title}</li>))}
                     </ul>
 
-                    </div>)
+                </div>)
             }
         </div>
     );

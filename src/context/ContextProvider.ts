@@ -14,7 +14,8 @@ type StoreType = {
 const defaultValue: StoreType = {
     userStore: {
         allUsers: [],
-        setFavoriteUser: () => {}
+        setFavoriteUser: () => {
+        }
     },
     postStore: {
         allPosts: []

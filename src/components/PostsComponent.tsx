@@ -4,7 +4,7 @@ import {PostComponent} from "./PostComponent";
 
 const PostsComponent = () => {
 
-    const {postStore:{allPosts}} = useContextProvider();
+    const {postStore: {allPosts}} = useContextProvider();
 
     return (
         <div>
