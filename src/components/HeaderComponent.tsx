@@ -8,6 +8,7 @@ const HeaderComponent = () => {
             <ul>
                 <li><Link to={'users'}>users page</Link></li>
                 <li><Link to={'posts'}>posts page</Link></li>
+                <li><Link to={'comments'}> comments page</Link></li>
                 <li><Link to={'userPosts'}>userPosts page</Link></li>
             </ul>
 

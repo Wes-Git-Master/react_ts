@@ -1,6 +1,7 @@
 import axios, {AxiosResponse} from "axios";
 import {IUserModel} from "../models/IUserModel";
 import {IPostModel} from "../models/IPostModel";
+import {ICommentModel} from "../models/ICommentModel";
 
 const axiosInstance = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com',
@@ -18,7 +19,14 @@ const postService = {
     }
 }
 
+const commentService = {
+    getComments: async (): Promise<AxiosResponse<ICommentModel[]>> => {
+        return await axiosInstance.get<ICommentModel[]>('/comments')
+    }
+}
+
 export {
     userService,
-    postService
+    postService,
+    commentService
 }
