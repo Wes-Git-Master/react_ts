@@ -5,8 +5,10 @@ import {HeaderComponent} from "./components/HeaderComponent";
 import {Context} from "./context/ContextProvider";
 import {IUserModel} from "./models/IUserModel";
 import {IPostModel} from "./models/IPostModel";
-import {commentService, postService, userService} from "./services/api.service";
+import {userService} from "./services/user.api.service";
 import {ICommentModel} from "./models/ICommentModel";
+import {postService} from "./services/post.api.service";
+import {commentService} from "./services/comment.api.service";
 
 const App: FC = () => {
 
