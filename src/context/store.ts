@@ -15,33 +15,31 @@ type StoreType = {
 }
 
 export const useStore = create<StoreType>()((set) => {
-   return{
-       userSlice: {
-           allUsers: [],
-           loudUsers: (users: IUserModel[]) => {
-               return set((state) => {
-                   return {
-                       ...state, userSlice: {...state.userSlice, allUsers: users}
-                   }
-               })
-           },
-           favoriteUser: null,
-           setFavoriteUser: (obj: IUserModel) => {
-               set(state => {
-                   return {
-                       ...state,
-                       userSlice: {
-                           ...state.userSlice,
-                           favoriteUser: obj
-                       }
-                   }
-               })
-           },
-       },
+    return {
+        userSlice: {
+            allUsers: [],
+            loudUsers: (users: IUserModel[]) => {
+                return set((state) => {
+                    return {...state, userSlice: {...state.userSlice, allUsers: users}}
+                })
+            },
+            favoriteUser: null,
+            setFavoriteUser: (obj: IUserModel) => {
+                return set(state => {
+                    return {
+                        ...state,
+                        userSlice: {
+                            ...state.userSlice,
+                            favoriteUser: obj
+                        }
+                    }
+                })
+            },
+        },
 
-       postSlice: {
-           allPosts: []
-       }
-   }
+        postSlice: {
+            allPosts: []
+        }
+    }
 });
 
