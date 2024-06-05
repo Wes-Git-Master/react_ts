@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
-import {IUserWithPostsType} from "../models/IUserWithPostsType";
+import {UserWithPostsType} from "../models/UserWithPostsType";
 
 interface IProps {
-    items: IUserWithPostsType[]
+    items: UserWithPostsType[]
 }
 
 const UserPostsComponent: FC<IProps> = ({items}) => {

@@ -6,7 +6,6 @@ interface IProps {
     user: IUserModel
 }
 
-
 const UserComponent: FC<IProps> = ({user}) => {
 
     const {userSlice: {setFavoriteUser}} = useStore();

@@ -4,7 +4,6 @@ import './index.css';
 import {RouterProvider} from "react-router-dom";
 import {browserRouter} from "./router/browserRouter";
 
-
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );

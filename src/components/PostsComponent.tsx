@@ -4,7 +4,7 @@ import {useStore} from "../context/store";
 
 const PostsComponent = () => {
 
-    const {postSlice:{allPosts}} = useStore();
+    const {postSlice: {allPosts}} = useStore();
 
     return (
         <div>

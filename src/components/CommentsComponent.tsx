@@ -2,10 +2,9 @@ import React from 'react';
 import {CommentComponent} from "./CommentComponent";
 import {useStore} from "../context/store";
 
-
 const CommentsComponent = () => {
 
-    const {commentSlice:{allComments}} = useStore();
+    const {commentSlice: {allComments}} = useStore();
 
     return (
         <div>
