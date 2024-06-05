@@ -31,13 +31,7 @@ export const useStore = create<StoreType>()((set) => {
             favoriteUser: null,
             setFavoriteUser: (obj: IUserModel) => {
                 return set(state => {
-                    return {
-                        ...state,
-                        userSlice: {
-                            ...state.userSlice,
-                            favoriteUser: obj
-                        }
-                    }
+                    return {...state, userSlice: {...state.userSlice, favoriteUser: obj}}
                 })
             },
         },

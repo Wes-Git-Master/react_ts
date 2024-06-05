@@ -4,13 +4,15 @@ import {Outlet} from "react-router-dom";
 import {HeaderComponent} from "./components/HeaderComponent";
 import {useStore} from "./context/store";
 import {userService} from "./services/user.api.service";
+import {postService} from "./services/post.api.service";
 
 const App: FC = () => {
 
-    const {userSlice} = useStore();
+    const {userSlice,postSlice} = useStore();
 
     useEffect(() => {
         userService.getUsers().then(value => userSlice.loudUsers(value.data))
+        postService.getPosts().then(value => postSlice.loudPosts(value.data))
     }, [userSlice]);
 
     return (
