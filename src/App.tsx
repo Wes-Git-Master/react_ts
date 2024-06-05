@@ -5,7 +5,8 @@ import {HeaderComponent} from "./components/HeaderComponent";
 import {Context} from "./context/ContextProvider";
 import {IUserModel} from "./models/IUserModel";
 import {IPostModel} from "./models/IPostModel";
-import {postService, userService} from "./services/api.service";
+import {userService} from "./services/user.api.service";
+import {postService} from "./services/post.api.service";
 
 const App: FC = () => {
 
