@@ -5,15 +5,23 @@ import {HeaderComponent} from "./components/HeaderComponent";
 import {useStore} from "./context/store";
 import {userService} from "./services/user.api.service";
 import {postService} from "./services/post.api.service";
+import {commentService} from "./services/comment.api.service";
 
 const App: FC = () => {
 
-    const {userSlice,postSlice} = useStore();
+    const {userSlice, postSlice, commentSlice} = useStore();
 
     useEffect(() => {
         userService.getUsers().then(value => userSlice.loudUsers(value.data))
-        postService.getPosts().then(value => postSlice.loudPosts(value.data))
     }, [userSlice]);
+
+    useEffect(() => {
+        postService.getPosts().then(value => postSlice.loudPosts(value.data))
+    }, [postSlice]);
+
+    useEffect(() => {
+        commentService.getComments().then(value => commentSlice.loudComments(value.data))
+    }, [commentSlice]);
 
     return (
         <div>
