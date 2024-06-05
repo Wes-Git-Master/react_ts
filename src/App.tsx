@@ -10,8 +10,8 @@ const App: FC = () => {
     const {userSlice} = useStore();
 
     useEffect(() => {
-            userService.getUsers().then(value => userSlice.loudUsers(value.data))
-        }, [userSlice]);
+        userService.getUsers().then(value => userSlice.loudUsers(value.data))
+    }, [userSlice]);
 
     return (
         <div>
