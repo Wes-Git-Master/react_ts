@@ -13,15 +13,9 @@ const App: FC = () => {
 
     useEffect(() => {
         userService.getUsers().then(value => userSlice.loudUsers(value.data))
-    }, [userSlice]);
-
-    useEffect(() => {
         postService.getPosts().then(value => postSlice.loudPosts(value.data))
-    }, [postSlice]);
-
-    useEffect(() => {
         commentService.getComments().then(value => commentSlice.loudComments(value.data))
-    }, [commentSlice]);
+    }, []);
 
     return (
         <div>
