@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
 import {useAppDispatch, useAppSelector} from "./redux/store";
-import {decrement, increment, resetState} from "./redux/slices/slice1";
-
+import {decrement, decrementByAmount, increment, incrementByAmount, resetState} from "./redux/slices/slice1";
 
 
 const App = () => {
 
     const {value} = useAppSelector(state => state.slice1);
-
     const dispatch = useAppDispatch()
+
+    /***************************************************************/
 
     return (
         <div>
@@ -17,18 +17,33 @@ const App = () => {
             <h2>{value}</h2>
 
             <button onClick={() => {
-                dispatch(decrement(50))
-            }}>decrement
+                dispatch(decrement())
+            }}> decrement
             </button>
 
             <button onClick={() => {
-                dispatch(increment(50))
-            }}>increment
+                dispatch(increment())
+            }}> increment
+            </button>
+
+            <br/>
+
+            <button onClick={() => {
+                dispatch(incrementByAmount(100))
+            }}> incrementByAmount
             </button>
 
             <button onClick={() => {
-                dispatch(resetState(0))
-            }}>reset</button>
+                dispatch(decrementByAmount(100))
+            }}> decrementByAmount
+            </button>
+
+            <br/>
+
+            <button onClick={() => {
+                dispatch(resetState())
+            }}> reset
+            </button>
 
         </div>
     );

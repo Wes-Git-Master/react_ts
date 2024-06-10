@@ -11,13 +11,13 @@ export const store = configureStore({
     }
 })
 
-/********************   useAppSelector   *************************/
+/********************   useAppSelector hook  *************************/
 
 export type RootState = ReturnType<typeof store.getState>
 export const useAppSelector
     = useSelector.withTypes<RootState>()
 
-/********************   useAppDispatch   *************************/
+/********************   useAppDispatch hook  *************************/
 
 type AppDispatch = typeof store.dispatch
 export const useAppDispatch
