@@ -3,7 +3,6 @@ import './App.css';
 import {useAppDispatch, useAppSelector} from "./redux/store";
 import {decrement, decrementByAmount, increment, incrementByAmount, resetState} from "./redux/slices/slice1";
 
-
 const App = () => {
 
     const {value} = useAppSelector(state => state.slice1);
