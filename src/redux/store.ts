@@ -2,7 +2,6 @@ import {configureStore} from "@reduxjs/toolkit";
 import {useDispatch, useSelector} from "react-redux";
 import {counter1Slice} from "./slices/slice1";
 
-
 /********************   configureStore   *************************/
 
 export const store = configureStore({
