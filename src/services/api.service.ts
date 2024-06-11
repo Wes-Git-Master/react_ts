@@ -8,12 +8,16 @@ const axiosInstance = axios.create({
     headers: {"Content-Type": "application/json"}
 });
 
+/**************************************************************************************************/
+
 export const userService = {
     getAll: async (): Promise<IUser[]> => {
         const response = await axiosInstance.get<IUser[]>(urls.users.base)
         return response.data
     }
 }
+
+/**************************************************************************************************/
 
 export const postService = {
     getAll: async () => {

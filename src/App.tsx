@@ -1,5 +1,7 @@
 import React, {FC, useEffect} from 'react';
-import {postActions, useAppDispatch, useAppSelector, userActions} from "./redux/store";
+import {useAppDispatch, useAppSelector} from "./redux/store";
+import {userActions} from "./redux/slices/userSlice";
+import {postActions} from "./redux/slices/postSlice";
 
 const App: FC = () => {
 
