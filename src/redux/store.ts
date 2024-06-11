@@ -5,6 +5,8 @@ import {AxiosError} from "axios";
 import {IPost} from "../models/IPost";
 import {useDispatch, useSelector} from "react-redux";
 
+/********************************   UsersSlice   ***************************************/
+
 type UserSliceType = {
     users: IUser[]
 }
@@ -47,7 +49,7 @@ const userSlice = createSlice({
 
 export const userActions = {...userSlice.actions, loadUsers}
 
-/******************************   PostsSlice   *****************************************/
+/********************************   PostsSlice   ***************************************/
 
 type PostSliceType = {
     posts: IPost[]
@@ -63,7 +65,7 @@ const loadPosts = createAsyncThunk(
 
         try {
             const posts = await postService.getAll();
-            return posts
+            return thunkAPI.fulfillWithValue(posts)
         } catch (e) {
             const error = e as AxiosError;
             return thunkAPI.rejectWithValue(error.response?.data)
