@@ -1,14 +1,16 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, isFulfilled, PayloadAction} from "@reduxjs/toolkit";
 import {IUser} from "../../models/IUser";
 import {userService} from "../../services/api.service";
 import {AxiosError} from "axios";
 
 type UserSliceType = {
     users: IUser[]
+    isLoaded: boolean
 }
 
 const userInitState: UserSliceType = {
-    users: []
+    users: [],
+    isLoaded: false
 }
 
 /***********************************   loadUsers   ***********************************/
@@ -20,6 +22,7 @@ const loadUsers = createAsyncThunk(
         try {
             const users = await userService.getAll();
             // console.log(users)
+            // thunkAPI.dispatch(userActions.changeLoadState(true))
             return thunkAPI.fulfillWithValue(users)
         } catch (e) {
             const error = e as AxiosError;
@@ -34,7 +37,11 @@ const loadUsers = createAsyncThunk(
 export const userSlice = createSlice({
     name: "userSlice",
     initialState: userInitState,
-    reducers: {},
+    reducers: {
+        changeLoadState: (state, action: PayloadAction<boolean>) => {
+            state.isLoaded = action.payload
+        }
+    },
     extraReducers: builder =>
         builder
             .addCase(loadUsers.fulfilled, (state, action) => {
@@ -42,6 +49,9 @@ export const userSlice = createSlice({
             })
             .addCase(loadUsers.rejected, (state, action) => {
                 //....
+            })
+            .addMatcher(isFulfilled(loadUsers), (state, action) => {
+                state.isLoaded = true
             })
 });
 

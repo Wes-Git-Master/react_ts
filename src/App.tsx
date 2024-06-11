@@ -7,7 +7,7 @@ const App: FC = () => {
 
     const dispatch = useAppDispatch();
 
-    const {userSlice: {users}, postSlice: {posts}} = useAppSelector(state => state);
+    const {userSlice: {users,isLoaded}, postSlice: {posts}} = useAppSelector(state => state);
 
     useEffect(() => {
         dispatch(userActions.loadUsers())
@@ -17,7 +17,8 @@ const App: FC = () => {
         <div>
 
             {
-                users.map(user => <div key={user.id}>{user.id} {user.name}</div>)
+                isLoaded? users.map(user => <div key={user.id}> {user.id} {user.name}
+                </div> ) : <h2>Loading ....</h2>
             }
 
             <hr/>
