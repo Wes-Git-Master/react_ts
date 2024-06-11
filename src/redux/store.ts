@@ -21,7 +21,7 @@ const loadUsers = createAsyncThunk(
 
         try {
             const users = await userService.getAll();
-            console.log(users)
+            // console.log(users)
             return thunkAPI.fulfillWithValue(users)
         } catch (e) {
             const error = e as AxiosError;
