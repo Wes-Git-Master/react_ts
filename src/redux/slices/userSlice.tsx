@@ -4,13 +4,15 @@ import {userService} from "../../services/api.service";
 import {AxiosError} from "axios";
 
 type UserSliceType = {
-    users: IUser[]
-    isLoaded: boolean
+    users: IUser[],
+    isLoaded: boolean,
+    user: IUser | null
 }
 
 const userInitState: UserSliceType = {
     users: [],
-    isLoaded: false
+    isLoaded: false,
+    user: null
 }
 
 /***********************************   loadUsers   ***********************************/
@@ -32,6 +34,22 @@ const loadUsers = createAsyncThunk(
     }
 )
 
+/***********************************   loadUserById   ***********************************/
+
+const loadUserById = createAsyncThunk(
+    'userSlice/loadUserById',
+    async (arg: string | undefined, thunkAPI) => {
+
+        try {
+            const user = await userService.getById(arg);
+            return thunkAPI.fulfillWithValue(user)
+        } catch (e) {
+            const error = e as AxiosError;
+            return thunkAPI.rejectWithValue(error.response?.data)
+        }
+    }
+)
+
 /***********************************   userSlice   ***********************************/
 
 export const userSlice = createSlice({
@@ -44,6 +62,9 @@ export const userSlice = createSlice({
     },
     extraReducers: builder =>
         builder
+            .addCase(loadUserById.fulfilled, (state, action) => {
+                state.user = action.payload
+            })
             .addCase(loadUsers.fulfilled, (state, action) => {
                 state.users = action.payload
             })
@@ -55,4 +76,8 @@ export const userSlice = createSlice({
             })
 });
 
-export const userActions = {...userSlice.actions, loadUsers}
+export const userActions = {
+    ...userSlice.actions,
+    loadUsers,
+    loadUserById
+}
