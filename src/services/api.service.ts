@@ -15,8 +15,8 @@ export const userService = {
         const response = await axiosInstance.get<IUser[]>(urls.users.base)
         return response.data
     },
-    getById: async (id: string | undefined): Promise<IUser> => {
-        const response = await axiosInstance.get<IUser>(urls.users.base + `/${id}`);
+    getById: async (id: string): Promise<IUser> => {
+        const response = await axiosInstance.get<IUser>(urls.users.byId(+id));
         return response.data
     }
 }
