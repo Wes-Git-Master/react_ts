@@ -2,8 +2,9 @@ import React, {useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../redux/store";
 import {userActions} from "../redux/slices/userSlice";
+import {SingleUserComponent} from "../components/SingleUserComponent";
 
-const UserPage = () => {
+const SingleUserPage = () => {
 
     const {id} = useParams();
     const dispatch = useAppDispatch();
@@ -13,15 +14,17 @@ const UserPage = () => {
 
     }, [id]);
 
+    /******************************************************************/
+
     return (
         <div>
 
             {
-                user && <div>{user.name} - {user.email}</div>
+                user && <SingleUserComponent user={user}/>
             }
 
         </div>
     );
 };
 
-export {UserPage};
+export {SingleUserPage};
