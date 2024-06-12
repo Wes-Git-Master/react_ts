@@ -45,5 +45,7 @@ export const postSlice = createSlice({
             })
 });
 
-export const postActions = {...postSlice.actions, loadPosts}
+export const postActions = {
+    ...postSlice.actions,
+    loadPosts}
 
