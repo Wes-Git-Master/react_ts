@@ -5,11 +5,13 @@ import {AxiosError} from "axios";
 
 
 type PostSliceType = {
-    posts: IPost[]
+    posts: IPost[],
+    isLoaded: boolean
 }
 
 const postsInitState: PostSliceType = {
-    posts: []
+    posts: [],
+    isLoaded: false
 }
 
 /***********************************   loadPosts   ***********************************/

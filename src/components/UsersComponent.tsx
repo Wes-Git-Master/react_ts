@@ -12,7 +12,6 @@ const UsersComponent = () => {
                 isLoaded ? users.map(user => <UserComponent key={user.id} user={user}/>) : <h2>Loading ....</h2>
             }
 
-
         </div>
     );
 };
