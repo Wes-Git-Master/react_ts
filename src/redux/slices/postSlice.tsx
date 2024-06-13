@@ -6,12 +6,10 @@ import {AxiosError} from "axios";
 
 type PostSliceType = {
     posts: IPost[],
-    post: IPost | null
 }
 
 const postsInitState: PostSliceType = {
     posts: [],
-    post: null
 }
 
 /***********************************   loadPosts   ***********************************/
