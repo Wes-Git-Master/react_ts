@@ -34,8 +34,8 @@ export const postService = {
 /**************************************************************************************************/
 
 export const commentService = {
-    getByPostId: async (id: string): Promise<IComment> => {
-        const response = await axiosInstance.get<IComment>(urls.comments.byPostId(+id));
+    getByPostId: async (id: string): Promise<IComment[]> => {
+        const response = await axiosInstance.get<IComment[]>(urls.comments.byPostId(+id));
         return response.data
     }
 }

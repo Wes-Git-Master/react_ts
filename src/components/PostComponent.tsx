@@ -12,13 +12,15 @@ const PostComponent: FC<IProps> = ({post}) => {
 
     return (
         <div>
-            <h4> {post.title} </h4>
-            <p> {post.body} </p>
-            postId: {post.id}
+            <hr/>
+            <h3>{post.title} </h3>
+            <i>{post.body}</i>
+            <p>id: {post.id}</p>
             <button onClick={() => {
                 navigate(`${post.id}`)
             }}> comments
             </button>
+
         </div>
     );
 };

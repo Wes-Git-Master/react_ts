@@ -70,12 +70,12 @@ export const userSlice = createSlice({
             .addCase(loadUsers.fulfilled, (state, action) => {
                 state.users = action.payload
             })
-            // .addCase(loadUsers.rejected, (state, action) => {
-            //
-            // })
-            // .addMatcher(isFulfilled(loadUsers), (state, action) => {
-            //     // state.isLoaded = true
-            // })
+    // .addCase(loadUsers.rejected, (state, action) => {
+    //
+    // })
+    // .addMatcher(isFulfilled(loadUsers), (state, action) => {
+    //     // state.isLoaded = true
+    // })
 });
 
 export const userActions = {
