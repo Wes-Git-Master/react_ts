@@ -8,23 +8,20 @@ const SingleUserPage = () => {
 
     const {id} = useParams();
     const dispatch = useAppDispatch();
-
-
     const user = useAppSelector(state => state.userSlice.user);
+
     useEffect(() => {
         dispatch(userActions.loadUserById(id))
 
     }, [id]);
 
-    /******************************************************************/
+    /********************************************************************************************************/
 
     return (
         <div>
-
             {
                 user && <SingleUserComponent user={user}/>
             }
-
         </div>
     );
 };

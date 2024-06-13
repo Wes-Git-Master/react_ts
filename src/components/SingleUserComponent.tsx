@@ -6,6 +6,7 @@ interface IProps {
 }
 
 const SingleUserComponent: FC<IProps> = ({user}) => {
+
     return (
         <div>
 

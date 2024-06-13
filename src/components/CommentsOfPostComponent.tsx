@@ -9,10 +9,8 @@ const CommentsOfPostComponent: FC<IProps> = ({comment}) => {
 
     return (
         <div>
-
             <b>id: {comment.id}</b>
             <p><i>{comment.body}</i></p>
-
         </div>
     );
 };

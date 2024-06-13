@@ -5,6 +5,7 @@ import {PostsPage} from "../pages/PostsPage";
 import {SingleUserPage} from "../pages/SingleUserPage";
 import {CommentsOfPostPage} from "../pages/CommentsOfPostPage";
 
+
 const routes: RouteObject[] = [
     {
         path: '', element: <App/>, children: [
@@ -16,6 +17,7 @@ const routes: RouteObject[] = [
         ]
     }
 ];
+
 const router = createBrowserRouter(routes);
 
 export default router

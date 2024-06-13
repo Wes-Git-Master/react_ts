@@ -1,7 +1,8 @@
 import {IComment} from "../../models/IComment";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {commentService} from "../../services/api.service";
 import {AxiosError} from "axios";
+import {commentService} from "../../services/comment.api.service";
+
 
 type CommentSliceType = {
     comments: IComment[] | null
@@ -30,7 +31,6 @@ const loadCommentsByPostId = createAsyncThunk(
     }
 );
 
-
 /***********************************   commentSlice   ***********************************/
 
 export const commentSlice = createSlice({
@@ -42,9 +42,9 @@ export const commentSlice = createSlice({
             .addCase(loadCommentsByPostId.fulfilled, (state, action) => {
                 state.comments = action.payload
             })
-            // .addCase(loadCommentsByPostId.rejected,(state, action) => {
-            //
-            // })
+    // .addCase(loadCommentsByPostId.rejected,(state, action) => {
+    //
+    // })
 
 })
 

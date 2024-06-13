@@ -8,21 +8,22 @@ const CommentsOfPostPage = () => {
 
     const {id} = useParams();
     const dispatch = useAppDispatch();
-
     const commentsOfPost = useAppSelector(state => state.commentSlice.comments);
 
     useEffect(() => {
-            dispatch(commentActions.loadCommentsByPostId(id))
-        }, [id]);
+        dispatch(commentActions.loadCommentsByPostId(id))
+    }, [id]);
 
+    /********************************************************************************************************/
 
     return (
         <div>
+
             {
-                commentsOfPost ?  commentsOfPost.map(comment => <CommentsOfPostComponent comment={comment} key={comment.id}/>)
+                commentsOfPost ?
+                    commentsOfPost.map(comment => <CommentsOfPostComponent comment={comment} key={comment.id}/>)
                     : <h2>Loading ...</h2>
             }
-
 
         </div>
     );

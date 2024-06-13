@@ -1,7 +1,7 @@
 import {IPost} from "../../models/IPost";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {postService} from "../../services/api.service";
 import {AxiosError} from "axios";
+import {postService} from "../../services/post.api.service";
 
 
 type PostSliceType = {
@@ -40,12 +40,13 @@ export const postSlice = createSlice({
             .addCase(loadPosts.fulfilled, (state, action) => {
                 state.posts = action.payload
             })
-            // .addCase(loadPosts.rejected, (state, action) => {
-            //     //...
-            // })
+    // .addCase(loadPosts.rejected, (state, action) => {
+    //     //...
+    // })
 });
 
 export const postActions = {
     ...postSlice.actions,
-    loadPosts}
+    loadPosts
+}
 

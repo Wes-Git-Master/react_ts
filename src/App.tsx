@@ -13,6 +13,7 @@ const App: FC = () => {
         dispatch(userActions.loadUsers())
         dispatch(postActions.loadPosts())
     }, []);
+
     return (
         <div>
             <HeaderComponent/>
