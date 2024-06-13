@@ -3,6 +3,7 @@ import {useAppSelector} from "../redux/store";
 import {UserComponent} from "./UserComponent";
 
 const UsersComponent = () => {
+
     const {users, isLoaded} = useAppSelector(state => state.userSlice);
 
     return (

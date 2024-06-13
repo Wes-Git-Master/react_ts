@@ -2,6 +2,7 @@ import axios from "axios";
 import {baseUrl, urls} from "../constants/urls";
 import {IUser} from "../models/IUser";
 import {IPost} from "../models/IPost";
+import {IComment} from "../models/IComment";
 
 const axiosInstance = axios.create({
     baseURL: baseUrl,
@@ -30,7 +31,14 @@ export const postService = {
     }
 }
 
+/**************************************************************************************************/
 
+export const commentService = {
+    getByPostId: async (id: string): Promise<IComment> => {
+        const response = await axiosInstance.get<IComment>(urls.comments.byPostId(+id));
+        return response.data
+    }
+}
 
 
 

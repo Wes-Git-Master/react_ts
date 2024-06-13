@@ -6,12 +6,12 @@ import {AxiosError} from "axios";
 
 type PostSliceType = {
     posts: IPost[],
-    isLoaded: boolean
+    post: IPost | null
 }
 
 const postsInitState: PostSliceType = {
     posts: [],
-    isLoaded: false
+    post: null
 }
 
 /***********************************   loadPosts   ***********************************/
@@ -42,9 +42,9 @@ export const postSlice = createSlice({
             .addCase(loadPosts.fulfilled, (state, action) => {
                 state.posts = action.payload
             })
-            .addCase(loadPosts.rejected, (state, action) => {
-                //...
-            })
+            // .addCase(loadPosts.rejected, (state, action) => {
+            //     //...
+            // })
 });
 
 export const postActions = {

@@ -8,6 +8,10 @@ const urls = {
     posts: {
         base: '/posts',
         byId: (id: number): string => urls.posts.base + `/${id}`
+    },
+    comments: {
+        base: '/comments',
+        byPostId: (id:number):string => `/posts/${id}` + urls.comments.base
     }
 }
 
