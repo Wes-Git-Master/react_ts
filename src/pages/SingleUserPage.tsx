@@ -11,8 +11,9 @@ const SingleUserPage = () => {
     const user = useAppSelector(state => state.userSlice.user);
 
     useEffect(() => {
-        dispatch(userActions.loadUserById(id))
-
+        if (id) {
+            dispatch(userActions.loadUserById(id))
+        }
     }, [id]);
 
     /********************************************************************************************************/

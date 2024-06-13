@@ -16,9 +16,8 @@ const commentInitState: CommentSliceType = {
 
 const loadCommentsByPostId = createAsyncThunk(
     'commentSlice/loadCommentsByPostId',
-    async (id: string | undefined, thunkAPI) => {
+    async (id: string , thunkAPI) => {
 
-        if (id) {
             try {
                 const commentsOfPost = await commentService.getByPostId(id);
                 return thunkAPI.fulfillWithValue(commentsOfPost)
@@ -26,8 +25,7 @@ const loadCommentsByPostId = createAsyncThunk(
                 const error = e as AxiosError
                 return thunkAPI.rejectWithValue(error.response?.data)
             }
-        }
-        return null
+
     }
 );
 

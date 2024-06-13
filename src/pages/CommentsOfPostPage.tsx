@@ -11,7 +11,9 @@ const CommentsOfPostPage = () => {
     const commentsOfPost = useAppSelector(state => state.commentSlice.comments);
 
     useEffect(() => {
-        dispatch(commentActions.loadCommentsByPostId(id))
+        if (id) {
+            dispatch(commentActions.loadCommentsByPostId(id))
+        }
     }, [id]);
 
     /********************************************************************************************************/
