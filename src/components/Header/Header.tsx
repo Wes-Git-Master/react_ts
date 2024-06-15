@@ -22,7 +22,8 @@ const Header = () => {
             {
                 me ?
                     <div>
-                        {me.username} -- {new Date(me.last_login).toDateString()}
+                        {me.username} <br/>
+                        {new Date(me.last_login).toDateString()}
                     </div>
                     :
                     <div>
