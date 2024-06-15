@@ -13,6 +13,8 @@ let initialState: IState = {
     error: null
 };
 
+//===========================================================================================================
+
 const login = createAsyncThunk<IUser, { user: IAuth }>(
     'authSlice/login',
     async ({user}, {rejectWithValue}) => {
@@ -35,6 +37,9 @@ const me = createAsyncThunk<IUser, void>(
         }
     }
 )
+
+//===========================================================================================================
+
 const authSlice = createSlice({
     name: 'authSlice',
     initialState,
@@ -55,7 +60,13 @@ const authSlice = createSlice({
             })
 })
 
-const {reducer: authReducer, actions} = authSlice;
+//===========================================================================================================
+
+const {
+    reducer: authReducer,
+    actions
+}
+    = authSlice;
 
 const authActions = {
     ...actions,
