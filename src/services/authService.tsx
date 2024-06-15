@@ -14,7 +14,7 @@ const _refreshTokenKey = 'refresh'
 
 const authService = {
 
-    register(user: IAuth): IRes<IUser> {
+    register(user: IAuth): IRes<IUser> {       // метод, приймає ( user типу IAuth ), повертає ( IRes типу IUser )
         return apiService.post(urls.auth.register, user)
     },
 
