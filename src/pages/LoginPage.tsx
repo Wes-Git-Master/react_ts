@@ -5,6 +5,9 @@ import {authActions} from "../redux/slices/authSlice";
 import {useNavigate} from "react-router-dom";
 
 const LoginPage = () => {
+
+    // ===================================================================================================
+
     const {register, handleSubmit} = useForm<IAuth>();
     const {error} = useAppSelector(state => state.auth);
     const dispatch = useAppDispatch();
@@ -16,6 +19,8 @@ const LoginPage = () => {
             navigate('/cars')
         }
     };
+
+    // ===================================================================================================
 
     return (
         <form onSubmit={handleSubmit(login)}>

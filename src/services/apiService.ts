@@ -3,10 +3,14 @@ import {baseURL, urls} from "../constants/urls";
 import {authService} from "./authService";
 import {router} from "../router";
 
+//=====================================================
+
 let isRefreshing = false
 type IWaitList = () => void
 const waitList: IWaitList[] = []
 const apiService = axios.create({baseURL})
+
+//==================================================================================
 
 apiService.interceptors.request.use(req => {
     const accessToken = authService.getAccessToken();
@@ -17,6 +21,8 @@ apiService.interceptors.request.use(req => {
 
     return req
 })
+
+//==================================================================================
 
 apiService.interceptors.response.use(
     res => {
@@ -55,6 +61,8 @@ apiService.interceptors.response.use(
     }
 )
 
+//==================================================================================
+
 const subscribeToWaitList = (cb: IWaitList): void => {
     waitList.push(cb)
 }
@@ -65,6 +73,8 @@ const runAfterRefresh = (): void => {
         cb()
     }
 }
+
+//=====================================================
 
 export {
     apiService
